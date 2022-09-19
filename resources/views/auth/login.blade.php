@@ -58,12 +58,16 @@
                     <div class="mt-6 text-center">
                         <x-button class="w-full">
                             {{ __('Log in') }}
+                            
                         </x-button>
-
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                            {{ __('Belum Punya Akun?') }}
+                        </a>
+                        <br>
                         @if (Route::has('password.request'))
                             <a class="text-sm text-gray-600 underline hover:text-gray-900"
                                href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
+                                {{ __('Lupa Password?') }}
                             </a>
                         @endif
                     </div>

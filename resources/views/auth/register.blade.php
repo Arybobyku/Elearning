@@ -26,6 +26,18 @@
                             autofocus
                         />
                     </div>
+                    <div class="relative w-full mb-3">
+                        <x-label for="nickname" :value="__('Nickname')"/>
+                        <x-input
+                            type="text"
+                            placeholder="{{ __('Nickname') }}"
+                            name="nickname"
+                            id="nickname"
+                            value="{{ old('nickname') }}"
+                            required
+                            autofocus
+                        />
+                    </div>
 
                     <div class="relative w-full mb-3">
                         <x-label for="email" :value="__('Email')" />
@@ -67,7 +79,7 @@
                         </x-button>
 
                         <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
+                            {{ __('Sudah Punya Akun?') }}
                         </a>
                     </div>
                 </form>
