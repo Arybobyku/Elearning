@@ -1,4 +1,4 @@
-@extends('main')
+@extends('../general/layouts/main')
 
 @section('contents')
         <div class="flex flex-wrap">
