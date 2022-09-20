@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
   @vite('resources/css/app.css')
 </head>
 <body>
@@ -52,6 +54,14 @@
             <li class="group">
                <a href="/about" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>     
             </li>
+            @if (Route::has('login'))
+            @auth
+             <li class="group">
+               <a href="/academies" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Akademi</a>     
+            </li>
+            @else
+@endauth
+                    @endif
            
         </ul>
       </nav>
