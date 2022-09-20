@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="px-4 w-full lg:w-4/12">
+    <div class="px-4 w-full lg:w-4/12 ">
         <div
             class="flex relative flex-col mb-6 w-full min-w-0 break-words rounded-lg border-0 shadow-lg bg-blueGray-200">
             <div class="px-6 py-6 mb-0 rounded-t">

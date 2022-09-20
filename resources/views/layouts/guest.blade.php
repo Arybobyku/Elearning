@@ -14,7 +14,7 @@
 <div class="font-sans text-gray-900 antialiased">
     <main>
         <section class="relative w-full h-full py-40 min-h-screen">
-            <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-full bg-no-repeat" style="background-image: url({{ asset('images/register_bg_2.png') }})"></div>
+            <div class="absolute top-0 w-full h-full bg-gradient-to-r from-cyan-500 to-blue-500 bg-full bg-no-repeat"></div>
 
             <div class="container mx-auto px-4 h-full">
                 <div class="flex content-center items-center justify-center h-full">
@@ -22,9 +22,8 @@
                 </div>
             </div>
 
-            <footer class="absolute w-full bottom-0 bg-blueGray-800 pb-6">
+            <footer class="absolute w-full bottom-0 bg-gradient-to-r from-cyan-500 to-blue-500 pb-6">
                 <div class="container mx-auto px-4">
-                    <hr class="mb-6 border-b-1 border-blueGray-600"/>
                     <div
                         class="flex flex-wrap items-center md:justify-between justify-center"
                     >
@@ -36,7 +35,7 @@
                                 <a
                                     href="https://www.creative-tim.com?ref=njs-login"
                                     class="text-white hover:text-blueGray-300 text-sm font-semibold py-1"
-                                >Creative Tim</a
+                                >Dartdroid</a
                                 >
                             </div>
                         </div>

@@ -47,7 +47,7 @@
         </nav>
         <!-- END TOP NAV -->
 
-        <div class="relative pt-12 pb-10 bg-sky-700 md:pt-32">
+        <div class="relative pt-12 pb-10 bg-cyan-900 md:pt-32">
             <div class="w-full px-4 mx-auto md:px-10">
                 <div class="flex flex-wrap"></div>
             </div>

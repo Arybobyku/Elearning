@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('main')
 
 @section('contents')
         <div class="flex flex-wrap">
