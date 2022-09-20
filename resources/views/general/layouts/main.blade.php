@@ -25,7 +25,7 @@
                <a href="#" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Profile</a>     
             </li>
             <form method="POST" action="{{ route('logout') }}">
-                  
+                @csrf
             <li class="group">
                <a href="href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Log Out</a>     
             </li>
