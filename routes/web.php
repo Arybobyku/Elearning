@@ -26,15 +26,16 @@ Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth','admin'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
-Route::middleware('auth')->group(function () {
+
+
+Route::middleware('auth','admin')->group(function () {
     // Route::view('about', 'about')->name('about');
 
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 });
