@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BotManController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,8 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('general/about');
 });
+
+Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
 Route::get('/dashboard', function () {
     return view('admin/dashboard');
