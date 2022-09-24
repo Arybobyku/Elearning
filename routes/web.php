@@ -25,6 +25,12 @@ Route::get('/about', function () {
 Route::get('/academies', function () {
     return view('users/academies');
 });
+Route::get('/academies/materi', function () {
+    return view('users/materi');
+});
+Route::get('/academies/isimateri', function () {
+    return view('users/isimateri');
+});
 Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
 Route::get('/dashboard', function () {
