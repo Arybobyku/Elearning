@@ -127,7 +127,7 @@
                     <x-slot name="icon">
                         <i class="far fa-circle mr-2 text-sm opacity-75"></i>
                     </x-slot>
-                    Anak AKu
+                    Materi
                 </x-nav-link>
             </ul>
         </div>

@@ -2,7 +2,7 @@
 
 @section('contents')
 
- <div class="flex flex-wrap px-16">
+ <div class="flex flex-wrap px-16 ">
           <div class="w-full self-center ">
             <h1
               class="text-base text-center font-semibold md:text-xl lg:text-2xl"
@@ -20,35 +20,23 @@
               >Mulai Belajar Sekarang</a> --}}
           </div>
         </div>
-          <div class="mt-4 grid gap-4 mx-16">
-            <a href="isimateri"class="bg-white rounded overflow-hidden shadow-md px-4">
-                <h3 class="pt-8 ">Bab 1</h3>
-                <p class="block pb-4">Bedsite Teaching</p>
-            </a>
-          </div>
-          <div class="mt-4 grid gap-4 mx-16">
-            <a href="isimateri"class="bg-white rounded overflow-hidden shadow-md px-4">
-                <h3 class="pt-8 ">Bab 2</h3>
-                <p class="block pb-4">BOR</p>
-            </a>
-          </div>
+            @foreach ($materi as $a)
+
+            <div class="container pb-20">
 
           <div class="mt-4 grid gap-4 mx-16 ">
-            <a href="#"class="bg-white rounded overflow-hidden shadow-md px-4">
-                <h3 class="pt-8 ">Bab 3</h3>
-                <p class="block pb-4">LOS</p>
-            </a>
+            <a 
+            href=
+            "/academies/isimateri/{{ $a["id"]}}"
+
+            class="bg-white rounded overflow-hidden shadow-md px-4">
+
+                <h3 class="pt-8 ">{{ $a["name"]}}</h3>
+                <p class="block pb-4">{{ $a["desc"]}}</p>
+
+            </a>          
           </div>
-          <div class="mt-4 grid gap-4 mx-16">
-            <a href="#"class="bg-white rounded overflow-hidden shadow-md px-4">
-                <h3 class="pt-8 ">Bab 4</h3>
-                <p class="block pb-4">TOL</p>
-            </a>
-          </div>
-          <div class="mt-4 grid gap-4 mx-16 pb-10">
-            <a href="#"class="bg-white rounded overflow-hidden shadow-md px-4">
-                <h3 class="pt-8 ">Bab 5</h3>
-                <p class="block pb-4">Dokumentasi Keperawatan</p>
-            </a>
-          </div>
+          @endforeach
+
+</div>
 @endsection

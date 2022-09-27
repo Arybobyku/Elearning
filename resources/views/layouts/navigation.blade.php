@@ -123,11 +123,19 @@
             </x-nav-heading>
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                <x-nav-link href="#">
+                <x-nav-link href="/dashboard/materi" :active="request()->routeIs('/dashboard/materi')">
                     <x-slot name="icon">
-                        <i class="far fa-circle mr-2 text-sm opacity-75"></i>
+                        <i class="fa fa-laptop mr-2 text-sm opacity-75"></i>
                     </x-slot>
-                    Anak AKu
+                    Materi
+                </x-nav-link>
+            </ul>
+                        <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/isimateri" :active="request()->routeIs('/dashboard/isimateri')">
+                    <x-slot name="icon">
+                        <i class="fa fa-book mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Isi Materi
                 </x-nav-link>
             </ul>
         </div>

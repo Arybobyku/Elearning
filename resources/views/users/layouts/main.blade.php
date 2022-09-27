@@ -86,7 +86,7 @@
  @vite('resources/js/script.js')
   <!-- Header Section End -->
   
-          <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-100">
+          {{-- <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-100">
       <div class="flex flex-row justify-between mx-auto">
     <button type="button" class="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-2 hover:bg-red-700 hover:text-white px-3">
       <div class="flex flex-row align-middle">
@@ -108,19 +108,19 @@
     <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
     <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022.  All Rights Reserved.
     </span>
-</footer>
+</footer> --}}
 </body>
 
 
-    <script>
-        var botmanWidget = {
-            frameEndpoint: 'botman', 
-            title:'Chatbot',
-            introMessage:'testing',
-            aboutText: 'Write Something',
-            introMessage: "✋ Hi! I'm form Real Programmer"
-        };
-    </script>
+      {{-- <script>
+          var botmanWidget = {
+              frameEndpoint: 'botman', 
+              title:'Chatbot',
+              introMessage:'testing',
+              aboutText: 'Write Something',
+              introMessage: "✋ Hi! I'm form Real Programmer"
+          };
+      </script> --}}
    
-    <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>
+    {{-- <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script> --}}
 </html>
