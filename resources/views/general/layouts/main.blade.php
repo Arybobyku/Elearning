@@ -13,12 +13,19 @@
 <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
 <div class="container">
   <div class="flex items-center justify-between relative">
-    <div class="px-4">
-            <a href="#home" class="font-bold text-lg text-cyan-900 block py-6">Ariga Nursing Management</a>
+     <div class="mb-2 sm:mb-0 flex flex-row
+  ">
+    <div class="h-10 w-10 self-center mx-4">
+      <img class="h-10 w-10 self-center" src="/images/logo.png" />
     </div>
+    <div>
+      <a href="/home" class="text-xl no-underline text-cyan-900 font-semibold">Ariga</a><br>
+      <span class="font-light text-xs text-yellow-600">Nursing Management</span>
+    </div>
+  </div>  
              @if (Route::has('login'))
             @auth
-    <div class="lg:pl-[400px]">
+    <div class="lg:pl-[450px]">
 
             <button id="profilenav" type="button" class="block">
             <span class="text-base text-black py-2 mx-8 hover:text-cyan-900">{{ Auth::user()->nickname }}</span>
@@ -39,7 +46,7 @@
     </div>
 
             @else
-    <div class="lg:pl-[550px]">
+    <div class="lg:pl-[600px]">
             
                <a href="{{ route('login') }}" class="text-base text-black py-2 mx-8 hover:text-cyan-900">Login</a>  
     </div>
@@ -125,7 +132,6 @@
       </section>
  @vite('resources/js/script.js')
   <!-- Header Section End -->
-  @include('users.layouts.footermateri')
 </body>
 
 

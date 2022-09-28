@@ -23,7 +23,7 @@
                     @csrf
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Judul Materi</label>
-                    <input type="text" id="name" name="name" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" required>
+                    <input type="text" id="name" name="name" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5"  placeholder="" required>
                 </div>
                 <div class="mb-6">
                     <label for="desc" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Deskripsi</label>

@@ -12,13 +12,13 @@
                 <div class="flex flex-wrap items-center">
                     <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                         <h3 class="font-semibold text-lg text-blueGray-700">
-                            Kelola Materi
+                            Kelola Kuis
                         </h3>
                     </div>
                 </div>
             </div>
 
-            <div class="block w-full overflow-x-auto p-8">
+            <div class="block w-full overflow-x-auto">
                 <div class="mb-6">
     <label for="text" class="block mb-2 text-sm font-medium text-gray-900">Judul Materi</label>
     <input type="text" id="email" value="{{ $materis->name }}" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="name@flowbite.com" disabled>

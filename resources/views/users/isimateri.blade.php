@@ -1,14 +1,14 @@
-@extends('users/layouts/main')
+@extends('..general/layouts/main')
 
 @section('contents')
 
 
 
- <div class="flex flex-wrap px-16">
+ <div class=" px-16">
             @foreach($isi_materis as $isimateri)
 
           <div class="w-full self-center ">
-                
+
 
             <h1
               class="text-base text-left font-bold md:text-xl lg:text-2xl"
@@ -21,15 +21,34 @@
             </h3>
         </div>
 
-          <div class="mt-4 grid gap-4 mx-16 py-20">
-            <p class="font-light justify-between text-lg">
+
+
+    @if ($isimateri->image)
+
+  <div class="grid m-6 place-items-center">
+      
+    <img class="max-h-96" src="{{ asset('storage/'.$isimateri->image) }}" >
+
+  </div>
+    @endif
+
+          <div class="mt-4 mx-16 py-16">
+            <article class="font-light text-center text-lg">
                            {!! $isimateri->isi !!} 
 
-            </p>
+            </article>
           </div>
+    @if ($isimateri->youtube)
+    <div class="grid m-6 place-items-center">
+    <iframe width="640" height="480"
+      src={{ 'https://www.youtube.com/embed/'. $isimateri->youtube }}>
+      </iframe>
+  </div>
+   @endif
+
 @endforeach
         </div>
-                    <div class="p-4">
-       {{ $isi_materis->links() }}
-</div>
+      <div class="p-4">
+            {{ $isi_materis->links() }}
+      </div>
 @endsection

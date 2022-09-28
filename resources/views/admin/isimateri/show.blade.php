@@ -20,14 +20,21 @@
 
             <div class="block w-full overflow-x-auto p-8">
                 <div class="mb-6">
-    <label for="sub_bab" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sub Bab</label>
+    <label for="sub_bab" class="block mb-2 text-sm font-medium text-gray-900 ">Sub Bab</label>
     <input type="text" id="sub_bab" value="{{ $isimateri->sub_bab }}" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="name@flowbite.com" disabled>
   </div>
   <div class="mb-6">
-    <label for="isi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Isi</label>
+    @if ($isimateri->image)
+    <label for="sub_bab" class="block mb-2 text-sm font-medium text-gray-900 ">Gambar</label>
+    <img src="{{ asset('storage/'.$isimateri->image) }}" class="rounded max-h-96">
 
+    @endif
+  </div>
+  <div class="mb-6">
+    <label for="isi" class="block mb-2 text-sm font-medium text-gray-900">Isi</label>
+<div class="text-black">
 {!! $isimateri->isi !!}
-
+</div>
 </div>
 
                 

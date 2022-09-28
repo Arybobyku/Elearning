@@ -45,8 +45,15 @@ class DashboardIsiMateriController extends Controller
          $validatedData = $request->validate([
         'id_materi' => 'required|max:11',
         'sub_bab' => 'required|max:255',
+        'image' => 'image|file|max:1024',
+        'youtube' => 'required|max:255',
         'isi' => 'required'
     ]);
+
+    if ($request->file('image')){
+        $validatedData['image'] = $request->file('image')->store('isimateri-images');
+    }
+    
     $validatedData['excerpt'] = Str::limit(strip_tags($request->isi), 300);
     Isimateris::create($validatedData);
 
@@ -95,8 +102,13 @@ class DashboardIsiMateriController extends Controller
          $validatedData = $request->validate([
         'sub_bab' => 'required|max:255',
         'id_materi' => 'required|max:11',
+        'image' => 'image|file|max:1024',
+        'youtube' => 'required|max:255',
         'isi' => 'required'
     ]);
+    if ($request->file('image')){
+    $validatedData['image'] = $request->file('image')->store('isimateri-images');
+    }
     Isimateris::where('id', $isimateri->id)->update($validatedData);
 
     return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Diubah');

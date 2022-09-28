@@ -130,12 +130,20 @@
                     Materi
                 </x-nav-link>
             </ul>
-                        <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                 <x-nav-link href="/dashboard/isimateri" :active="request()->routeIs('/dashboard/isimateri')">
                     <x-slot name="icon">
                         <i class="fa fa-book mr-2 text-sm opacity-75"></i>
                     </x-slot>
                     Isi Materi
+                </x-nav-link>
+            </ul>
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/kuis" :active="request()->routeIs('/dashboard/kuis')">
+                    <x-slot name="icon">
+                        <i class="fa fa-question mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Kuis
                 </x-nav-link>
             </ul>
         </div>

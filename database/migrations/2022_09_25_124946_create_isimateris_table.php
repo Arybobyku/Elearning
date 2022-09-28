@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->biginteger("id_materi");
             $table->string("sub_bab");
+            $table->string("image")->nullable();
+            $table->string("youtube")->nullable();
             $table->text("isi");
             $table->timestamps();
         });

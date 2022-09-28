@@ -11,6 +11,8 @@ class Isimateris extends Model
         protected $fillable = [
         'id_materi',
         'sub_bab',
+        'image',
+        'youtube',
         'isi',
     ];
     public function judul(){
