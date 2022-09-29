@@ -30,14 +30,6 @@ Route::get('/about', function () {
     return view('general/about');
 });
 
-Route::get('/academies', function () {
-    return view('users/academies');
-});
-
-Route::get('/academies/materi',[MateriController::class, 'index']);
-
-Route::get('/academies/isimateri/{id_materi}',[MateriController::class, 'isi']);
-
 Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 
 Route::get('/dashboard', function () {
@@ -46,9 +38,21 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/dashboard/materi', DashboardMateriController::class)->middleware('auth');
-Route::resource('/dashboard/isimateri', DashboardIsiMateriController::class)->middleware('auth');
+Route::resource('/dashboard/materi', DashboardMateriController::class)->middleware('auth','admin');
+Route::resource('/dashboard/isimateri', DashboardIsiMateriController::class)->middleware('auth','admin');
 
+Route::middleware('auth')->group(function () {
+
+
+Route::get('/academies', function () {
+  return view('users/academies');
+});
+
+Route::get('/academies/materi',[MateriController::class, 'index']);
+
+Route::get('/academies/isimateri/{id_materi}',[MateriController::class, 'isi']);
+
+});
 
 Route::middleware('auth','admin')->group(function () {
     // Route::view('about', 'about')->name('about');
