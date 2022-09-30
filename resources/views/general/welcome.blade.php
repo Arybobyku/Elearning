@@ -110,7 +110,39 @@
           </div>
 </div>
   <!-- Inner -->
- 
+  <section id="about" class="pt-20 pb-16 bg-white">
+          <div class="max-w-xl mx-auto text-center mb-16">
+            <h4 class="font-semibold text-3xl text-teal-700 mb-2">Tentang Kami</h4>
+            <p class="font-medium text-md text-black"></p>
+          </div>
+          
+              <div class="lg:flex justify-center sm:flex flex-wrap">
+          <div class="w-full self-center lg:w-1/2">
+            <h2 class="medium text-stone-800 mb-5">
+              Ariga Nursing Managemngt
+            </h2>
+            <p class="light text-gray-600 mb-10">
+              Webiste ini dibangun untuk membantu mahasiswa hingga perawat yang sudah bekerja agar dapat mendapatkan materi seputar nursing management secara gratis
+            </p>
+            <a
+              href="#"
+              class="text-base font-semibold text-white bg-slate-800 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out"
+              >hubungi Kami</a
+            >
+          </div>
+          <div class="max-w-sm w-full px-4">
+            <div class="mt-10">
+              <img
+                src="{{ asset('/images/me.jpeg') }}"
+                alt="Me"
+                class="object-none object-center rounded-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
   <!-- Display Container (not part of component) END -->
         @endsection
