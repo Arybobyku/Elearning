@@ -23,19 +23,31 @@
     <label for="sub_bab" class="block mb-2 text-sm font-medium text-gray-900 ">Sub Bab</label>
     <input type="text" id="sub_bab" value="{{ $isimateri->sub_bab }}" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="name@flowbite.com" disabled>
   </div>
-  <div class="mb-6">
     @if ($isimateri->image)
+
+  <div class="grid m-6 place-items-center">
     <label for="sub_bab" class="block mb-2 text-sm font-medium text-gray-900 ">Gambar</label>
     <img src="{{ asset('storage/'.$isimateri->image) }}" class="rounded max-h-96">
 
-    @endif
   </div>
+    @endif
+
+      
   <div class="mb-6">
     <label for="isi" class="block mb-2 text-sm font-medium text-gray-900">Isi</label>
 <div class="text-black">
 {!! $isimateri->isi !!}
 </div>
 </div>
+@if ($isimateri->youtube)
+    <div class="grid m-8 place-items-center">
+    <label for="sub_bab" class="block mb-2 text-xl font-medium text-gray-900 ">Youtube</label>
+
+    <iframe width="640" height="480"
+      src={{ 'https://www.youtube.com/embed/'. $isimateri->youtube }}>
+      </iframe>
+  </div>
+   @endif
 
                 
             </div>

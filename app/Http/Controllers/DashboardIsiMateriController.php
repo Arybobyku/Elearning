@@ -46,7 +46,7 @@ class DashboardIsiMateriController extends Controller
         'id_materi' => 'required|max:11',
         'sub_bab' => 'required|max:255',
         'image' => 'image|file|max:1024',
-        'youtube' => 'required|max:255',
+        'youtube' => 'max:255',
         'isi' => 'required'
     ]);
 
@@ -54,7 +54,6 @@ class DashboardIsiMateriController extends Controller
         $validatedData['image'] = $request->file('image')->store('isimateri-images');
     }
     
-    $validatedData['excerpt'] = Str::limit(strip_tags($request->isi), 300);
     Isimateris::create($validatedData);
 
     return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Ditambahkan');
@@ -103,7 +102,7 @@ class DashboardIsiMateriController extends Controller
         'sub_bab' => 'required|max:255',
         'id_materi' => 'required|max:11',
         'image' => 'image|file|max:1024',
-        'youtube' => 'required|max:255',
+        'youtube' => 'max:255',
         'isi' => 'required'
     ]);
     if ($request->file('image')){

@@ -22,7 +22,7 @@
         </div>
             @foreach ($materi as $a)
 
-            <div class="container pb-20">
+            <div class="pb-20">
 
           <div class="mt-4 grid gap-4 mx-16 ">
             <a 

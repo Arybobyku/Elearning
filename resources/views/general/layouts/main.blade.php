@@ -30,7 +30,7 @@
             <button id="profilenav" type="button" class="block">
             <span class="text-base text-black py-2 mx-8 hover:text-cyan-900">{{ Auth::user()->nickname }}</span>
             </button>
-            <nav id="nav-profile" class="hidden absolute py-5 lg:mr-52 md:mr-36 bg-white shadow-lg rounded-lg max-w-[150px] w-full right-4 top-full ">
+            <nav id="nav-profile" class="hidden absolute py-5 lg:mr-80 md:mr-36 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full ">
             <ul class="block">
             <li class="group">
                <a href="#" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Profile</a>     
@@ -67,7 +67,7 @@
                <a href="/" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Beranda</a>     
             </li>
             <li class="group">
-               <a href="/about" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>     
+               <a href="#about" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>     
             </li>
             <li class="group">
                <a href="/about" class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Berita</a>     
@@ -118,7 +118,7 @@
                   href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=yudhatriya07@gmail.com"
                   class="flex items-center gap-2 text-white"
                   ><ion-icon class="text-xl" name="mail-outline"></ion-icon
-                  >yudhatriya07@gmail.com</a
+                  >ariga@gmail.com</a
                 >
               </div>
             </div>
