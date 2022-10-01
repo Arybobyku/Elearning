@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     {{-- @vite(['/public/css/trix.css', '/public/js/trix.js']) --}}
-    <link rel="stylesheet" href="js/trix.js">
+    <link href="js/trix.js">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="build/assets/app.55fd2f6d.css">
+    <link href="build/assets/app.55fd2f6d.css">
 </head>
 
 <body class="antialiased text-blueGray-700">

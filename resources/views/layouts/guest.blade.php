@@ -8,7 +8,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="stylesheet" href="build/assets/app.55fd2f6d.css">
+    <link href="build/assets/app.55fd2f6d.css">
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 <body class="text-blueGray-700 antialiased">

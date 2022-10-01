@@ -14,7 +14,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="build/assets/app.55fd2f6d.css">
+    
+    <link  href="build/assets/app.55fd2f6d.css">
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
