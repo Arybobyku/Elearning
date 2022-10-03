@@ -65,5 +65,8 @@ Route::middleware('auth','admin')->group(function () {
     Route::post('/user/addToUser/{id}', [App\Http\Controllers\UserController::class, 'addToUser'])->name('user.addToUser');
     Route::post('/user/deleteUser/{id}', [App\Http\Controllers\UserController::class, 'deleteUser'])->name('user.deleteUser');
 
+    Route::get('/diskusi', [App\Http\Controllers\DiskusiController::class, 'index'])->name('diskusi');
+    Route::post('/diskusi', [App\Http\Controllers\DiskusiController::class, 'addKomentar'])->name('addKomentar');
+
 
 });
