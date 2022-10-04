@@ -1,7 +1,7 @@
 @extends('../general/layouts/main')
 
 @section('contents')
-    <div class=" bg-gray-800 py-20">
+    <div class="py-20">
         <div class="flex flex-wrap px-16">
             <div class="w-full self-center ">
                 <h1 class="text-base text-white font-semibold md:text-xl lg:text-2xl">
