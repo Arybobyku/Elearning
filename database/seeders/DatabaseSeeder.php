@@ -4,10 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Isimateris;
 use App\Models\Kuis;
-use App\Models\Materi;
 use App\Models\User;
+use App\Models\Materi;
+use App\Models\Welcome;
+use App\Models\Isimateris;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -104,6 +105,26 @@ class DatabaseSeeder extends Seeder
             'opsi2' => 'Segara setelah melahirkan',
             'opsi3' => '1 hari setelah melahirkan',
             'opsi4' => '1 hari sebelum melahirkan',
+        ]);
+            Welcome::create([
+            'name' => 'TIS',
+            'image' => 'isimateri-images/KhcGVWs3vJyMhLXMN6gN570NnNZvlvOwveS09LFR.png',
+        ]);
+            Welcome::create([
+            'name' => 'BOR',
+            'image' => 'isimateri-images/hSdgDtv9U86NscL6P30rDNcrb4MnvRetEdeOOOxv.png',
+        ]);
+            Welcome::create([
+            'name' => 'Bedsite',
+            'image' => 'isimateri-images/fdRgXWW6L9vB6UF75sjX7RK9ZKah8zkrCzNcQOMa.png',
+        ]);
+            Welcome::create([
+            'name' => 'Discharge',
+            'image' => 'isimateri-images/A5JTB7nyv2FHcomWrZi4CRppAH4wD2l9dgpnBrn4.png',
+        ]);
+            Welcome::create([
+            'name' => 'Evaluasi Kerja',
+            'image' => 'isimateri-images/jAclDZ972g4RFhL8crvoUPTan0AmwVSZDhrTQrsj.png',
         ]);
     }
 }
