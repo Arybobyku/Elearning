@@ -19,7 +19,7 @@
     </div>
 
     <div class="mt-8 grid grid-cols-2 gap-4 mx-16 pb-20">
-        <a href="academies/materi" class="bg-white rounded overflow-hidden shadow-md px-4">
+        <a href="/academies/materi" class="bg-green-100 rounded overflow-hidden shadow-md p-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -29,7 +29,9 @@
             <p class="block pb-4">Mulai Kelas Sekarang</p>
 
         </a>
-        <div class="bg-white rounded overflow-hidden shadow-md px-4">
+
+
+        <a href="/academies/kuis" class="bg-yellow-100 rounded overflow-hidden shadow-md p-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -38,8 +40,9 @@
 
             <h3 class="pt-8">Kuis</h3>
             <p class="block pb-4">Selesaikan Materi dan Isi Kuis</p>
-        </div>
-        <div class="bg-white rounded overflow-hidden shadow-md px-4">
+        </a>
+
+        <div class="bg-red-100 rounded overflow-hidden shadow-md p-4">
             <a href="diskusi">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
@@ -50,6 +53,7 @@
                 <h3 class="pt-8">Forum Diskusi </h3>
                 <p class="block pb-4">Berikan Pendapat dan Komentar mu</p>
             </a>
+        </div>
 
         </div>
 

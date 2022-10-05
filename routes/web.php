@@ -4,12 +4,17 @@ use App\Models\Materi;
 use App\Models\Isimateris;
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KuisController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\DiskusiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardKuisController;
 use App\Http\Controllers\DashboardMateriController;
+use App\Http\Controllers\DashboardWelcomeController;
 use App\Http\Controllers\DashboardIsiMateriController;
+use App\Http\Controllers\WelcomeController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -23,9 +28,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
-Route::get('/', function () {
-    return view('general/welcome');
-});
+// Route::get('/', function () {
+//     return view('general/welcome');
+// });
+Route::get('/',[WelcomeController::class, 'index']);
+
+
 Route::get('/about', function () {
     return view('general/about');
 });
@@ -40,6 +48,8 @@ require __DIR__.'/auth.php';
 
 Route::resource('/dashboard/materi', DashboardMateriController::class)->middleware('auth','admin');
 Route::resource('/dashboard/isimateri', DashboardIsiMateriController::class)->middleware('auth','admin');
+Route::resource('/dashboard/kuis', DashboardKuisController::class)->middleware('auth','admin');
+Route::resource('/dashboard/welcome', DashboardWelcomeController::class)->middleware('auth','admin');
 
 Route::middleware('auth')->group(function () {
 
@@ -51,6 +61,11 @@ Route::get('/academies', function () {
 Route::get('/academies/materi',[MateriController::class, 'index']);
 
 Route::get('/academies/isimateri/{id_materi}',[MateriController::class, 'isi']);
+
+Route::get('/academies/kuis',[KuisController::class, 'create']);
+Route::post('/academies/kuis', [KuisController::class, 'saveAnwere'])->name("insertKuis");
+
+
 
 });
 

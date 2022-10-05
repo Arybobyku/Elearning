@@ -12,24 +12,31 @@
                 <div class="flex flex-wrap items-center">
                     <div class="relative w-full px-4 max-w-full flex-grow flex-1">
                         <h3 class="font-semibold text-lg text-blueGray-700">
-                            Kelola Materi
+                            Tambah Gambar
                         </h3>
                     </div>
                 </div>
             </div>
 
-            <div class="block w-full overflow-x-auto">
-                <form method="post" action="/dashboard/materi/{{ $materis->id }}">
-                    @method('put')
+            <div class="block w-full overflow-x-auto p-8">
+                <form method="post" action="/dashboard/welcome" enctype="multipart/form-data">
                     @csrf
                 <div class="mb-6">
-                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Judul Materi</label>
-                    <input type="text" value="{{ old('name',  $materis->name)}}" id="name" name="name" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" required>
+                    <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Nama</label>
+                    <input type="text" id="name" name="name" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" required>
                 </div>
+
                 <div class="mb-6">
-                    <label for="desc" class="block mb-2 text-sm font-medium text-gray-900">Deskripsi</label>
-                    <input type="text" value="{{ old('desc',  $materis->desc)}}" id="desc" name="desc" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-black text-sm rounded-lg " placeholder="" required>
+                <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
+                <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:placeholder-gray-400 @error('image') is-invalid @enderror" aria-describedby="file_input_help" id="image" name="image" type="file">
+                <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG (MAX. 800x400px).</p>
+                @error('image')
+                <div class="invalid-feedback">
+                    {{ $message }}
                 </div>
+                @enderror
+                </div>
+
 
   <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                 </form>
@@ -41,4 +48,3 @@
     </div>
   
 </x-app-layout>
- 

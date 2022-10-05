@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Isimateris;
+use App\Models\Kuis;
 use App\Models\Materi;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -78,8 +79,31 @@ class DatabaseSeeder extends Seeder
             1.	Meningkatkan pemahaman pasien dan keluarga mengenai masalah kesehatan dan kemungkinan terjadinya kompliasi dari penyakit yang di derita dan hal-hal yang perlu pembatasan yang akan diberlakukan pada pasien di rumah. <br>
             2.	Mengembangkan kemampuan pasien dan keluarga untuk merawat dan memenuhi kebutuhan pasien dan memberikan lingkungan yang aman dan nyaman untuk pasien di rumah. <br>
             3.	Memastikan bahwa rujukan yang diperlukan untuk perawatan selanjutnya pada pasien adalah benar.
-
             ',
+        ]);
+            Kuis::create([
+            'soal' => 'Tujuan dari pemberian senam nifas yaitu?',
+            'jawaban' => '1',
+            'opsi1' => 'Mempercepat proses pemulihan keadaan ibu',
+            'opsi2' => 'Memperlambat proses pemulihan',
+            'opsi3' => 'Memudahkan melakukan aktivitas',
+            'opsi4' => 'Menambah nafsu makan',
+        ]);
+            Kuis::create([
+            'soal' => 'Apa yang dimaksud dengan senam nifas?',
+            'jawaban' => '1',
+            'opsi1' => 'Gerakan-gerakan yang dilakukan ibu setelah melahirkan ',
+            'opsi2' => 'Gerakan-gerakan yang dilakukan ibu sebelum melahirkan',
+            'opsi3' => 'Gerakan-gerakan waktu ibu melahirkan',
+            'opsi4' => 'Senam nifas dilakukan pada bulan ke 20 saja',
+        ]);
+            Kuis::create([
+            'soal' => 'Kapan ibu mulai menyusi?',
+            'jawaban' => '2',
+            'opsi1' => 'Seminggu setelah melahirkan',
+            'opsi2' => 'Segara setelah melahirkan',
+            'opsi3' => '1 hari setelah melahirkan',
+            'opsi4' => '1 hari sebelum melahirkan',
         ]);
     }
 }
