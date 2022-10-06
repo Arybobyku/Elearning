@@ -51,4 +51,10 @@
       <div class="p-4">
             {{ $isi_materis->links() }}
       </div>
+      @if($isi_materis->onLastPage())
+
+<div class="flex justify-end">
+  <a href="#" class="text-xl font-light bg-green-200 p-4 mr-2 mb-2 hover:bg-green-500">Lanjut Materi Selanjutnya</a>
+</div>
+      @endif
 @endsection
