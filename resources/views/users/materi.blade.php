@@ -27,7 +27,7 @@
           <div class="mt-4 grid gap-4 mx-16 ">
             <a 
             href=
-            "/academies/isimateri/{{ $a["id"]}}"
+            "/academies/materi/{{ $a["id"]}}"
 
             class="bg-white rounded overflow-hidden shadow-md px-4">
 

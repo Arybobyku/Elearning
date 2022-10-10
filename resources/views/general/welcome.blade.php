@@ -45,50 +45,23 @@
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                     <div id="slider"
                         class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
+                        
+      
+                            @foreach($welcomes as $welcome)
+
                         <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                            <img src="{{ asset('/images/carosel-4.png') }}" alt="black chair and white table"
-                                class="object-cover object-center w-full" />
-                            <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 1</h2> --}}
-                                <div class="flex h-full items-end pb-6">
-                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white ">
-                                        Discharge Planing</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                            <img src="{{ asset('/images/carosel-3.png') }}" alt="sitting area"
+                            <img src="{{ asset('storage/'.$welcome->image) }}" alt="sitting area"
                                 class="object-cover object-center w-full" />
                             <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                                 {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white ">BOR</h2> --}}
                                 <div class="flex h-full items-end pb-6">
-                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white ">BOR
+                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white ">{{ $welcome->name }}
                                     </h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                            <img src="{{ asset('/images/carosel-2.png') }}" alt="sitting area"
-                                class="object-cover object-center w-full" />
-                            <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2> --}}
-                                <div class="flex h-full items-end pb-6">
-                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white ">Bedsite
-                                        Teaching</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                            <img src="{{ asset('/images/carosel-1.png') }}" alt="sitting area"
-                                class="object-cover object-center w-full" />
-                            <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900">Catalog 2</h2> --}}
-                                <div class="flex h-full items-end pb-6">
-                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white">Evaluasi
-                                        Kinerja</h3>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                      
                     </div>
                 </div>
                 <button aria-label="slide forward"

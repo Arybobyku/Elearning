@@ -23,10 +23,15 @@ class MateriController extends Controller
     // }
     public function isi($id_materi)
     {
+        // $user = Isimateris::find($id);
+        $prev = Isimateris::where('id_materi', '<', $id_materi)->max('id_materi');
+        $next = Isimateris::where('id_materi', '>', $id_materi)->min('id_materi');
+        // $back = Isimateris::where('id', $user->id)->first();
         return view('users/isimateri', [
-        "isi_materis" => Isimateris::where('id_materi', $id_materi)->paginate(1)
+        "isi_materis" => Isimateris::where('id_materi', $id_materi)->paginate(1),
+    ]
+    )->with('next' , $next)->with('prev' , $prev);
 
-    ]);
     }
     
 }

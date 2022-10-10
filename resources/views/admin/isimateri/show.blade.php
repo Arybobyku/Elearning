@@ -27,7 +27,7 @@
 
   <div class="grid m-6 place-items-center">
     <label for="sub_bab" class="block mb-2 text-sm font-medium text-gray-900 ">Gambar</label>
-    <img src="{{ asset('storage/'.$isimateri->image) }}" class="rounded max-h-96">
+    <img src="{{ asset('/storage/'.$isimateri->image) }}" class="rounded max-h-96">
 
   </div>
     @endif

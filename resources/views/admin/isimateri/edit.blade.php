@@ -19,7 +19,7 @@
             </div>
 
             <div class="block w-full overflow-x-auto p-8">
-                <form method="post" action="/dashboard/isimateri/{{ $isimateris->id }} " enctype="multipart/form-data">
+                <form method="post" action="/dashboard/isimateri/{{ $isimateris->id }}" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                 <div class="mb-6">

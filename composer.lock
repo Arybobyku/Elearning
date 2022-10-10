@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1bf67c58294765ea554d614e6caa017",
+    "content-hash": "341206a4f64ea4752d5acee58fd7abda",
     "packages": [
         {
             "name": "botman/botman",
@@ -85,6 +85,71 @@
                 "source": "https://github.com/botman/botman/tree/v2.7.7"
             },
             "time": "2022-07-15T07:46:02+00:00"
+        },
+        {
+            "name": "botman/driver-web",
+            "version": "v1.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/botman/driver-web.git",
+                "reference": "45b3bde9c5af0f52d9a893a3793740e3304015af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/botman/driver-web/zipball/45b3bde9c5af0f52d9a893a3793740e3304015af",
+                "reference": "45b3bde9c5af0f52d9a893a3793740e3304015af",
+                "shasum": ""
+            },
+            "require": {
+                "botman/botman": ">=2.0",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "botman/driver-facebook": "~2.0",
+                "botman/studio-addons": "~1.0",
+                "ext-curl": "*",
+                "illuminate/support": "~5.5.0",
+                "mockery/mockery": "^1.1",
+                "phpunit/phpunit": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "BotMan\\Drivers\\Web\\Providers\\WebServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BotMan\\Drivers\\Web\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcel Pociot",
+                    "email": "m.pociot@gmail.com"
+                }
+            ],
+            "description": "Web driver for BotMan",
+            "homepage": "http://github.com/botman/driver-web",
+            "keywords": [
+                "Botman",
+                "bot",
+                "web"
+            ],
+            "support": {
+                "issues": "https://github.com/botman/driver-web/issues",
+                "source": "https://github.com/botman/driver-web/tree/v1.5.3"
+            },
+            "time": "2022-05-01T20:39:28+00:00"
         },
         {
             "name": "brick/math",
