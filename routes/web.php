@@ -60,7 +60,7 @@ Route::get('/academies', function () {
 
 Route::get('/academies/materi',[MateriController::class, 'index']);
 
-Route::get('/academies/isimateri/{id_materi}',[MateriController::class, 'isi']);
+Route::get('/academies/materi/{id_materi}',[MateriController::class, 'isi']);
 
 Route::get('/academies/kuis',[KuisController::class, 'create']);
 Route::post('/academies/kuis', [KuisController::class, 'saveAnwere'])->name("insertKuis");

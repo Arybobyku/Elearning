@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('isimateris', function (Blueprint $table) {
             $table->id();
-            $table->biginteger("id_materi");
+            $table->foreignId("id_materi");
             $table->string("sub_bab");
             $table->string("image")->nullable();
             $table->string("youtube")->nullable();

@@ -15,7 +15,13 @@ class Isimateris extends Model
         'youtube',
         'isi',
     ];
+    protected $appends = ['next', 'previous'];
     public function judul(){
         return $this->belongsTo(Materi::class, 'id_materi');
     }
+    public function getNextAttribute()
+{
+    return $this->where('id_materi', '>', $this->id_materi)->orderBy('id_materi','asc')->first();
+}
+
 }
