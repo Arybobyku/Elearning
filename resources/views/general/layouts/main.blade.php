@@ -75,7 +75,7 @@
                                     class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="#about"
+                                <a href="/#about"
                                     class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>
                             </li>
                             <li class="group">
@@ -88,7 +88,6 @@
                                         <a href="/academies"
                                             class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Akademi</a>
                                     </li>
-                                @else
                                 @endauth
                             @endif
 
@@ -177,6 +176,9 @@ const profileNav = document.querySelector("#profilenav");
 profileNav.addEventListener("click", function () {
     navProfile.classList.toggle("hidden");
 });
+</script>
+
+<script>//Scrip Untuk Navbar
 //navbar fixed
 window.onscroll = function () {
     const header = document.querySelector("header");
