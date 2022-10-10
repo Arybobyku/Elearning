@@ -162,6 +162,14 @@
                     Nilai Kuis
                 </x-nav-link>
             </ul>
+                        <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/diskusi" :active="request()->routeIs('diskusi.index') || request()->routeIs('diskusi.show')">
+                    <x-slot name="icon">
+                        <i class="fa fa-mail-bulk mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Forum Diskusi
+                </x-nav-link>
+            </ul>
         </div>
     </div>
 </nav>
