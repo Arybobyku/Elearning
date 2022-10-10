@@ -48,5 +48,9 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->role==2 || $this->role==1?true:false;
     }
+    public function answer()
+    {
+        return $this->hasOne(UserAnswer::class);
+    }
 
 }

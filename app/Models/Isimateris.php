@@ -16,6 +16,7 @@ class Isimateris extends Model
         'isi',
     ];
     protected $appends = ['next', 'previous'];
+    
     public function judul(){
         return $this->belongsTo(Materi::class, 'id_materi');
     }

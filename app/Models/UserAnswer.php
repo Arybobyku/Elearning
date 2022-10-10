@@ -15,11 +15,15 @@ class UserAnswer extends Model
         'answer',
     ];
 
-    public function kuesioners(){
-        return $this->hasOne(kuesioner::class,'id','id_kuis');
+    public function kuis(){
+        return $this->hasOne(Kuis::class,'id','id_kuis');
     }
 
     public function user(){
         return $this->hasOne(UserResults::class,'id','user_result_id');
+    }
+    public function nama(){
+
+        return $this->hasOne(User::class,'id','id_user');
     }
 }

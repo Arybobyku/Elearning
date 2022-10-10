@@ -5,7 +5,19 @@
 <div class="mb-5">
  
 <h3 class=" font-medium text-center text-2xl ">Kuis Ariga Nursing Management</h3>
+<a href='/academies' class="text-md font-light text-white bg-slate-500 p-5 ml-4 mb-2 rounded-sm hover:bg-slate-700">Kembali
+  </a>
       <div class="m-8 p-8 font-light lg:pl-32 bg-slate-100 rounded shadow-xl">
+        @if ($user_result_count>=1)
+    <div class="container py-5 center">
+    <center>
+        <img src="{{ asset('/images/doneimage.svg') }}" alt="Done image" class="img-fluid center"
+            style="height: 400px" />
+        <div class="container py-4">
+            <h1 class="text-xl font-medium">Kamu Telah Menyelesaikan Kuis</h1>
+
+        </div>
+@else
         <form class="needs-validation"  method="POST" action="{{ Route('insertKuis') }}">
           @csrf
           @method('POST')
@@ -38,5 +50,6 @@
             </div>
         </form>
       </div>
+      @endif
     </div>
 @endsection

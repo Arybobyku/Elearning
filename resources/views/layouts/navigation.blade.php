@@ -143,7 +143,7 @@
                     <x-slot name="icon">
                         <i class="fa fa-question mr-2 text-sm opacity-75"></i>
                     </x-slot>
-                    Kuis
+                    Soal Kuis
                 </x-nav-link>
             </ul>
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
@@ -152,6 +152,14 @@
                         <i class="fa fa-tv mr-2 text-sm opacity-75"></i>
                     </x-slot>
                     Welcome
+                </x-nav-link>
+            </ul>
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/userresult" :active="request()->routeIs('/dashboard/welcome')">
+                    <x-slot name="icon">
+                        <i class="fa fa-newspaper mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Nilai Kuis
                 </x-nav-link>
             </ul>
         </div>

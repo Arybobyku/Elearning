@@ -23,4 +23,7 @@ class UserResults extends Model
     {
         return $this->hasOne(User::class, 'id', 'id_user');
     }
+    public function nama(){
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

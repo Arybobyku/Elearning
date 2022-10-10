@@ -6,9 +6,12 @@
             <h1 class="text-base font-semibold md:text-xl lg:text-2xl">
                 Belajar Nursing Management
             </h1>
-            {{-- <h2 class="medium text-stone-800 mb-5">
-              Developer & <span class="text-stone-800"> Video Editor</span>
-            </h2> --}}
+                @if (session()->has('success'))
+                <div class="bg-green-100 border-t border-b border-green-500 text-green-700 px-4 py-3" role="alert">
+                <p class="font-bold">Pesan Informasi</p>
+                <p class="text-sm">{{ session('success') }}</p>
+                </div>
+                @endif
             <p class="light text-gray-600 mb-10">
             </p>
             {{-- <a
