@@ -142,7 +142,7 @@
 
 </body>
 
-<script>
+<script> //Scrip Untuk Gambar Welcome Page
   //carousel
 let defaultTransform = 0;
 function goNext() {
@@ -160,7 +160,9 @@ function goPrev() {
     slider.style.transform = "translateX(" + defaultTransform + "px)";
 }
 prev.addEventListener("click", goPrev);
+</script>
 
+<script> //Scrip Untuk Navbar
 //hamburger
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");

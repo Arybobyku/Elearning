@@ -15,7 +15,7 @@
             class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             href="{{ route('dashboard') }}"
         >
-            Elearning
+            Dashoard
         </a>
         <ul class="md:hidden items-center flex flex-wrap list-none">
             <li class="inline-block relative">
@@ -102,7 +102,7 @@
                         <x-slot name="icon">
                             <i class="fas fa-users mr-2 text-sm opacity-75"></i>
                         </x-slot>
-                        {{ __('Users') }}
+                        Pengguna
                     </x-nav-link>
                 </li>
 
