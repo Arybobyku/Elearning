@@ -10,11 +10,13 @@ use App\Http\Controllers\BotManController;
 use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DiskusiController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\DashboardKuisController;
 use App\Http\Controllers\DashboardMateriController;
+use App\Http\Controllers\DashboardDiskusiController;
 use App\Http\Controllers\DashboardWelcomeController;
 use App\Http\Controllers\DashboardIsiMateriController;
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\DashboardUserResultsController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -48,20 +50,20 @@ require __DIR__.'/auth.php';
 
 Route::resource('/dashboard/materi', DashboardMateriController::class)->middleware('auth','admin');
 Route::resource('/dashboard/isimateri', DashboardIsiMateriController::class)->middleware('auth','admin');
+Route::resource('/dashboard/diskusi', DashboardDiskusiController::class)->middleware('auth','admin');
 Route::resource('/dashboard/kuis', DashboardKuisController::class)->middleware('auth','admin');
 Route::resource('/dashboard/welcome', DashboardWelcomeController::class)->middleware('auth','admin');
+Route::resource('/dashboard/userresult', DashboardUserResultsController::class)->middleware('auth','admin');
+
+Route::delete('/dashboard/userresult/', 'App\Http\Controllers\DashboardUserResultsController@destroy');
 
 Route::middleware('auth')->group(function () {
-
 
 Route::get('/academies', function () {
   return view('users/academies');
 });
-
 Route::get('/academies/materi',[MateriController::class, 'index']);
-
 Route::get('/academies/materi/{id_materi}',[MateriController::class, 'isi']);
-
 Route::get('/academies/kuis',[KuisController::class, 'create']);
 Route::post('/academies/kuis', [KuisController::class, 'saveAnwere'])->name("insertKuis");
 

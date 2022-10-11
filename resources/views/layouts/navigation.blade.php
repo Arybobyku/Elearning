@@ -15,7 +15,7 @@
             class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
             href="{{ route('dashboard') }}"
         >
-            Elearning
+            Dashoard
         </a>
         <ul class="md:hidden items-center flex flex-wrap list-none">
             <li class="inline-block relative">
@@ -102,7 +102,7 @@
                         <x-slot name="icon">
                             <i class="fas fa-users mr-2 text-sm opacity-75"></i>
                         </x-slot>
-                        {{ __('Users') }}
+                        Pengguna
                     </x-nav-link>
                 </li>
 
@@ -123,7 +123,7 @@
             </x-nav-heading>
 
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                <x-nav-link href="/dashboard/materi" :active="request()->routeIs('/dashboard/materi')">
+                <x-nav-link href="/dashboard/materi" :active="request()->routeIs('materi.index') || request()->routeIs('materi.show') || request()->routeIs('materi.create') || request()->routeIs('materi.edit')">
                     <x-slot name="icon">
                         <i class="fa fa-laptop mr-2 text-sm opacity-75"></i>
                     </x-slot>
@@ -131,7 +131,7 @@
                 </x-nav-link>
             </ul>
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                <x-nav-link href="/dashboard/isimateri" :active="request()->routeIs('/dashboard/isimateri')">
+                <x-nav-link href="/dashboard/isimateri" :active="request()->routeIs('isimateri.index') || request()->routeIs('isimateri.show') || request()->routeIs('isimateri.create') || request()->routeIs('isimateri.edit')">
                     <x-slot name="icon">
                         <i class="fa fa-book mr-2 text-sm opacity-75"></i>
                     </x-slot>
@@ -139,19 +139,35 @@
                 </x-nav-link>
             </ul>
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                <x-nav-link href="/dashboard/kuis" :active="request()->routeIs('/dashboard/kuis')">
+                <x-nav-link href="/dashboard/kuis" :active="request()->routeIs('kuis.index') || request()->routeIs('kuis.show') || request()->routeIs('kuis.create') || request()->routeIs('kuis.edit')">
                     <x-slot name="icon">
                         <i class="fa fa-question mr-2 text-sm opacity-75"></i>
                     </x-slot>
-                    Kuis
+                    Soal Kuis
                 </x-nav-link>
             </ul>
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                <x-nav-link href="/dashboard/welcome" :active="request()->routeIs('/dashboard/welcome')">
+                <x-nav-link href="/dashboard/welcome" :active="request()->routeIs('welcome.index') || request()->routeIs('welcome.show') || request()->routeIs('welcome.create') || request()->routeIs('welcome.edit')">
                     <x-slot name="icon">
                         <i class="fa fa-tv mr-2 text-sm opacity-75"></i>
                     </x-slot>
                     Welcome
+                </x-nav-link>
+            </ul>
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/userresult" :active="request()->routeIs('userresult.index') || request()->routeIs('userresult.show')">
+                    <x-slot name="icon">
+                        <i class="fa fa-newspaper mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Nilai Kuis
+                </x-nav-link>
+            </ul>
+                        <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/diskusi" :active="request()->routeIs('diskusi.index') || request()->routeIs('diskusi.show')">
+                    <x-slot name="icon">
+                        <i class="fa fa-mail-bulk mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Forum Diskusi
                 </x-nav-link>
             </ul>
         </div>

@@ -16,7 +16,7 @@ class KuisController extends Controller
         $kuiss = Kuis::all();
         $userId = Auth::id();
         $userResultStatus = UserResults::where('id_user', $userId)->count();
-        return view('users/kuis', ['kuiss' => $kuiss]);
+        return view('users/kuis', ['kuiss' => $kuiss, 'user_result_count' => $userResultStatus]);
     }
 
     public function saveAnwere(Request $request)
@@ -56,6 +56,6 @@ class KuisController extends Controller
             ]);
         }
 
-        return view('users.academies');
+        return redirect('/academies')->with('success', 'Anda Telah Menyelesaikan Kuis');
     }
 }

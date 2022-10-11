@@ -105,7 +105,7 @@
                     materi seputar nursing management secara gratis
                 </p>
                 <a href="#"
-                    class="text-base font-semibold text-white bg-slate-800 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">hubungi
+                    class="text-base font-semibold text-white bg-slate-800 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">Hubungi
                     Kami</a>
             </div>
             <div class="max-w-sm w-full px-4">

@@ -3,12 +3,16 @@
 @section('contents')
 
  <div class="flex flex-wrap px-16 ">
+  
           <div class="w-full self-center ">
             <h1
               class="text-base text-center font-semibold md:text-xl lg:text-2xl"
             >
               Materi Belajar Nursing Management
             </h1>
+
+            <a href='/academies' class="text-md font-light text-white bg-slate-500 p-5 mb-2 rounded-md hover:bg-slate-700">Kembali
+  </a>
             {{-- <h2 class="medium text-stone-800 mb-5">
               Developer & <span class="text-stone-800"> Video Editor</span>
             </h2> --}}

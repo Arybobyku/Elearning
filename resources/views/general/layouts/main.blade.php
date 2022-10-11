@@ -75,7 +75,7 @@
                                     class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="#about"
+                                <a href="/#about"
                                     class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>
                             </li>
                             <li class="group">
@@ -88,7 +88,6 @@
                                         <a href="/academies"
                                             class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Akademi</a>
                                     </li>
-                                @else
                                 @endauth
                             @endif
 
@@ -142,7 +141,7 @@
 
 </body>
 
-<script>
+<script> //Scrip Untuk Gambar Welcome Page
   //carousel
 let defaultTransform = 0;
 function goNext() {
@@ -160,7 +159,9 @@ function goPrev() {
     slider.style.transform = "translateX(" + defaultTransform + "px)";
 }
 prev.addEventListener("click", goPrev);
+</script>
 
+<script> //Scrip Untuk Navbar
 //hamburger
 const hamburger = document.querySelector("#hamburger");
 const navMenu = document.querySelector("#nav-menu");
@@ -175,6 +176,9 @@ const profileNav = document.querySelector("#profilenav");
 profileNav.addEventListener("click", function () {
     navProfile.classList.toggle("hidden");
 });
+</script>
+
+<script>//Scrip Untuk Navbar
 //navbar fixed
 window.onscroll = function () {
     const header = document.querySelector("header");
