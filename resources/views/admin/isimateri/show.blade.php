@@ -35,9 +35,9 @@
       
   <div class="mb-6">
     <label for="isi" class="block mb-2 text-sm font-medium text-gray-900">Isi</label>
-<div class="text-black">
-{!! $isimateri->isi !!}
-</div>
+<article class="trix-editor">
+{!!  $isimateri->isi  !!}
+</article>
 </div>
 @if ($isimateri->youtube)
     <div class="grid m-8 place-items-center">

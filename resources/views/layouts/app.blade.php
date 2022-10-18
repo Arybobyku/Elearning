@@ -19,7 +19,6 @@
   <link rel="stylesheet" type="text/css" href="/css/trix.css">
   <script type="text/javascript" src="/js/trix.js"></script>
 
-
 </head>
 
 <body class="antialiased text-blueGray-700">
