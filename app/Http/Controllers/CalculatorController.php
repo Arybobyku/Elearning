@@ -28,18 +28,14 @@ class CalculatorController extends Controller
     public function alos()
     {
         $harirawat = request()->input('harirawat');
-        $hidup = request()->input('hidup');
-        $mati = request()->input('mati');
         $keluar = request()->input('keluar');
-        if ($keluar != 0 && $mati != 0 && $hidup != 0) {
-            $hasilJawaban = ((int) $harirawat / (int) $keluar) * ((int) $mati + (int) $hidup) * 100;
+        if ($keluar != 0) {
+            $hasilJawaban = ((int) $harirawat / (int) $keluar) * 100;
         } else {
             $hasilJawaban = 0;
         }
         return view('general.alos', [
             'harirawat' => $harirawat,
-            'hidup' => $hidup,
-            'mati' => $mati,
             'keluar' => $keluar,
             'hasilJawaban' => 0 ? 0 : $hasilJawaban,
         ]);
@@ -47,18 +43,18 @@ class CalculatorController extends Controller
     public function toi()
     {
         $harirawat = request()->input('harirawat');
-        $hidup = request()->input('hidup');
-        $mati = request()->input('mati');
+        $hari = request()->input('hari');
+        $tempattidur = request()->input('tempattidur');
         $keluar = request()->input('keluar');
-        if ($keluar != 0 && $mati != 0 && $hidup != 0) {
-            $hasilJawaban = ((int) $harirawat / (int) $keluar) * ((int) $mati + (int) $hidup) * 100;
+        if ($keluar != 0) {
+            $hasilJawaban = ((((int) $hari * (int) $tempattidur) - (int)$harirawat)/(int) $keluar) * 100;
         } else {
             $hasilJawaban = 0;
         }
         return view('general.toi', [
             'harirawat' => $harirawat,
-            'hidup' => $hidup,
-            'mati' => $mati,
+            'hari' => $hari,
+            'tempattidur' => $tempattidur,
             'keluar' => $keluar,
             'hasilJawaban' => 0 ? 0 : $hasilJawaban,
         ]);
