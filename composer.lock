@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "341206a4f64ea4752d5acee58fd7abda",
+    "content-hash": "966f01907d7eefe5a78f870a0e99cb68",
     "packages": [
         {
             "name": "botman/botman",
@@ -6119,6 +6119,63 @@
                 }
             ],
             "time": "2022-07-20T13:45:53+00:00"
+        },
+        {
+            "name": "te7a-houdini/laravel-trix",
+            "version": "2.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amaelftah/laravel-trix.git",
+                "reference": "52aa86853b9883e934ddb2938d3015e56e951a28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amaelftah/laravel-trix/zipball/52aa86853b9883e934ddb2938d3015e56e951a28",
+                "reference": "52aa86853b9883e934ddb2938d3015e56e951a28",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.8.0|~6.0|~7.0|~8.0|~9.0",
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5|~4.0|~5.0|~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Te7aHoudini\\LaravelTrix\\LaravelTrixServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Te7aHoudini\\LaravelTrix\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ahmed Abd El Ftah",
+                    "email": "ahmedabdelftah95165@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "trix editor for laravel inspired by ActionText for rails",
+            "homepage": "https://github.com/te7ahoudini/laravel-trix",
+            "keywords": [
+                "laravel-trix",
+                "te7a-houdini"
+            ],
+            "support": {
+                "issues": "https://github.com/amaelftah/laravel-trix/issues",
+                "source": "https://github.com/amaelftah/laravel-trix/tree/2.0.6"
+            },
+            "time": "2022-02-14T13:23:06+00:00"
         },
         {
             "name": "tightenco/collect",

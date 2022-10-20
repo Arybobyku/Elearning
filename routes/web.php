@@ -11,6 +11,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DiskusiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\DashboardKuisController;
 use App\Http\Controllers\DashboardMateriController;
 use App\Http\Controllers\DashboardDiskusiController;
@@ -39,6 +40,14 @@ Route::get('/',[WelcomeController::class, 'index']);
 Route::get('/about', function () {
     return view('general/about');
 });
+Route::get('/bor',[CalculatorController::class, 'bor']);
+Route::post('/bor',[CalculatorController::class, 'bor']);
+
+Route::get('/alos',[CalculatorController::class, 'alos']);
+Route::post('/alos',[CalculatorController::class, 'alos']);
+
+Route::get('/toi',[CalculatorController::class, 'toi']);
+Route::post('/toi',[CalculatorController::class, 'toi']);
 
 Route::match(['get', 'post'], '/botman', [BotManController::class, 'handle']);
 

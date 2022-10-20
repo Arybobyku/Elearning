@@ -71,9 +71,10 @@
     @endif
 
           <div class="mt-4 mx-16 py-16">
-            <article class="font-light text-center text-lg">
+            <article class="font-light justify-between text-lg">
+              <div class="trix-editor">
                            {!! $isimateri->isi !!} 
-
+</div>
             </article>
           </div>
     @if ($isimateri->youtube)

@@ -12,14 +12,12 @@
               Developer & <span class="text-stone-800"> Video Editor</span>
             </h2> --}}
             <p class="light text-gray-600 mb-10">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-                natus ipsum at dolor minus laboriosam earum aspernatur accusamus,
-                possimus ea totam. Labore, cumque. Maiores harum iste illum est,
-                cum possimus.
+                Mulai belajar manajemen kepearawatan dengan terarah sekarang
             </p>
             <a href="{{ route('register') }}"
                 class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">Mulai
                 Belajar Sekarang</a>
+
         </div>
         <div class="w-full self-end px-4 lg:max-w-lg">
             <div class="mt-10 lg:mt-9 lg:right-0">
@@ -45,23 +43,23 @@
                 <div class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden">
                     <div id="slider"
                         class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700">
-                        
-      
-                            @foreach($welcomes as $welcome)
 
-                        <div class="flex flex-shrink-0 relative w-full sm:w-auto">
-                            <img src="{{ asset('storage/'.$welcome->image) }}" alt="sitting area"
-                                class="object-cover object-center w-full" />
-                            <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
-                                {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white ">BOR</h2> --}}
-                                <div class="flex h-full items-end pb-6">
-                                    <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white ">{{ $welcome->name }}
-                                    </h3>
+
+                        @foreach ($welcomes as $welcome)
+                            <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                                <img src="{{ asset('storage/' . $welcome->image) }}" alt="sitting area"
+                                    class="object-cover object-center w-full" />
+                                <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
+                                    {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white ">BOR</h2> --}}
+                                    <div class="flex h-full items-end pb-6">
+                                        <h3 class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white ">
+                                            {{ $welcome->name }}
+                                        </h3>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
-                      
+
                     </div>
                 </div>
                 <button aria-label="slide forward"
@@ -87,6 +85,33 @@
                 dipersiapkan untuk mengetahui seputar manajemen keperawatan sesuai standar.
             </p>
         </div>
+
+        <section class="my-5">
+            <div class="text-center py-8">
+                <h2 class="font-semibold text-3xl text-teal-800 mb-2">Kalkulator</h2>
+                <p class="light text-gray-600 mb-10">
+                    Gunakan kalkulator untuk mempermudah kamu menghitung BOR, ALOS, dan TOI
+                </p>
+                <div class="mt-3 gap-2 md:flex">
+                    <div>
+                        <a href="/bor"
+                            class="text font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                            Kalkulator BOR</a>
+                    </div>
+                    <div>
+                        <a href="/alos"
+                            class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                            Kalkulator ALOS</a>
+                    </div>
+                    <div>
+                        <a href="/toi"
+                            class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                            Kalkulator TOI</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
     <!-- Inner -->
     <section id="about" class="pt-20 pb-16 bg-white">
