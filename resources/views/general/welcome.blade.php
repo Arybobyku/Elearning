@@ -25,25 +25,6 @@
             </div>
         </div>
     </div>
-    <section class="">
-        <div class="max-w-xl mx-auto text-center py-8 ">
-                        <h2 class="font-semibold text-3xl text-teal-800 mb-2">Kalkulator</h2>
-            <p class="light text-gray-600 mb-10">
-                Gunakan kalkulator untuk mempermudah kamu menghitung BOR, ALOS, dan TOI
-            </p>
-    <div class="mt-6">
-        <a href="/bor"
-            class="text font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-            Kalkulator BOR</a>
-        <a href="/alos"
-            class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-            Kalkulator ALOS</a>
-        <a href="/toi"
-            class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-            Kalkulator TOI</a>
-    </div>
-    </div>
-    </section>
     <!-- Display Container (not part of component) START -->
 
     <div class="flex flex-wrap bg-slate-200 p-16 min-w-full">
@@ -104,6 +85,33 @@
                 dipersiapkan untuk mengetahui seputar manajemen keperawatan sesuai standar.
             </p>
         </div>
+
+        <section class="my-5">
+            <div class="text-center py-8">
+                <h2 class="font-semibold text-3xl text-teal-800 mb-2">Kalkulator</h2>
+                <p class="light text-gray-600 mb-10">
+                    Gunakan kalkulator untuk mempermudah kamu menghitung BOR, ALOS, dan TOI
+                </p>
+                <div class="mt-3 gap-2 md:flex">
+                    <div>
+                        <a href="/bor"
+                            class="text font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                            Kalkulator BOR</a>
+                    </div>
+                    <div>
+                        <a href="/alos"
+                            class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                            Kalkulator ALOS</a>
+                    </div>
+                    <div>
+                        <a href="/toi"
+                            class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                            Kalkulator TOI</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
     <!-- Inner -->
     <section id="about" class="pt-20 pb-16 bg-white">
