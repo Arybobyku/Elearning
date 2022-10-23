@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Cviebrock\EloquentSluggable\Services\SlugService;
-
 class DashboardNewsController extends Controller
 {
     /**
@@ -79,11 +77,10 @@ class DashboardNewsController extends Controller
      * @param  \App\Models\Isimateris  $isimateris
      * @return \Illuminate\Http\Response
      */
-    public function edit(Isimateris $isimateri)
+    public function edit(News $news)
     {
-        return view('admin.isimateri.edit', [
-            'isimateris' => $isimateri,
-            'judulmateri' => Materi::all(),
+        return view('admin.news.edit', [
+            'news' => $news,
         ]);
     }
 
@@ -94,33 +91,42 @@ class DashboardNewsController extends Controller
      * @param  \App\Models\Isimateris  $isimateris
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Isimateris $isimateri)
+    public function update(Request $request, News $news)
     {
-        $validatedData = $request->validate([
-            'sub_bab' => 'required|max:255',
-            'id_materi' => 'required|max:11',
-            'image' => 'image|file|max:1024',
-            'youtube' => 'max:255',
-            'isi' => 'required',
-        ]);
-        if ($request->file('image')) {
+        if ($request->slug != $news->slug) {
+            $validatedData = $request->validate([
+                'title' => 'required|max:255',
+                'slug' => 'required|unique:news',
+                'image' => 'image|file|max:1024',
+                'isi' => 'required',
+            ]);
+        } else {
+            $validatedData = $request->validate([
+                'title' => 'required|max:255',
+                'image' => 'image|file|max:1024',
+                'isi' => 'required',
+            ]);
+        }
+            if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('isimateri-images');
         }
-        Isimateris::where('id', $isimateri->id)->update($validatedData);
 
-        return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Diubah');
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->isi, 20));
+
+        News::where('id', $news->id)->update($validatedData);
+
+        return redirect('/dashboard/news')->with('success', 'Isi Materi Baru Telah Diubah');
     }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Isimateris  $isimateris
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Isimateris $isimateri)
+    public function destroy(News $news)
     {
-        Isimateris::destroy($isimateri->id);
+        News::destroy($news->id);
 
-        return redirect('/dashboard/isimateri')->with('delete', 'Isi Materi Baru Telah Dihapus');
+        return redirect('/dashboard/news')->with('delete', 'Isi Materi Baru Telah Dihapus');
     }
 }

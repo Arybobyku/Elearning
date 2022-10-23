@@ -33,7 +33,7 @@
                             class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5 @error('slug') border-red-400 @enderror"
                             placeholder="" readonly value="{{ old('slug') }}">
                         @error('slug')
-                            <div class="invalid-feedback">
+                            <div class="text-red-500">
                                 {{ $message }}
                             </div>
                         @enderror

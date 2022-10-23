@@ -59,8 +59,8 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::resource('/dashboard/materi', DashboardMateriController::class)->middleware('auth','admin');
-Route::resource('/dashboard/news', DashboardNewsController::class)->middleware('auth','admin');
 Route::resource('/dashboard/isimateri', DashboardIsiMateriController::class)->middleware('auth','admin');
+Route::resource('/dashboard/news', DashboardNewsController::class)->middleware('auth','admin');
 Route::resource('/dashboard/diskusi', DashboardDiskusiController::class)->middleware('auth','admin');
 Route::resource('/dashboard/kuis', DashboardKuisController::class)->middleware('auth','admin');
 Route::resource('/dashboard/welcome', DashboardWelcomeController::class)->middleware('auth','admin');

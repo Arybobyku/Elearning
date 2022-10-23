@@ -15,4 +15,9 @@ class News extends Model
         'excerpt',
         'isi',
     ];
+
+    public function  getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
