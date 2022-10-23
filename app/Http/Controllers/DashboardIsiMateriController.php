@@ -105,9 +105,9 @@ class DashboardIsiMateriController extends Controller
         'youtube' => 'max:255',
         'isi' => 'required'
     ]);
-    if ($request->file('image')){
+             if ($request->file('image')){
     $validatedData['image'] = $request->file('image')->store('isimateri-images');
-    }
+    }                              
     Isimateris::where('id', $isimateri->id)->update($validatedData);
 
     return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Diubah');
