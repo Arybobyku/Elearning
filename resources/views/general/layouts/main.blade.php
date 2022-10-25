@@ -79,7 +79,7 @@
                                     class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Tentang</a>
                             </li>
                             <li class="group">
-                                <a href="/about"
+                                <a href="/news"
                                     class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Berita</a>
                             </li>
                             @if (Route::has('login'))

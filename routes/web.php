@@ -11,6 +11,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DiskusiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\DashboardKuisController;
 use App\Http\Controllers\DashboardNewsController;
@@ -41,6 +42,9 @@ Route::get('/',[WelcomeController::class, 'index']);
 Route::get('/about', function () {
     return view('general/about');
 });
+Route::get('/news',[NewsController::class, 'index']);
+Route::get('/article/{news:slug}',[NewsController::class, 'show']);
+
 Route::get('/bor',[CalculatorController::class, 'bor']);
 Route::post('/bor',[CalculatorController::class, 'bor']);
 

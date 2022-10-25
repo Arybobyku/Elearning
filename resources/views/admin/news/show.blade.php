@@ -29,24 +29,17 @@
                     </div>
                 @else
                     <div class="grid m-6 place-items-center">
-                        <img src="https://source.unsplash.com/1200x400?forest" class="rounded">
+                        <img src="https://source.unsplash.com/1200x600?forest" class="rounded">
 
                     </div>
                 @endif
-
-
                 <div class="mb-6">
                     <article class="trix-editor">
                         {!! $news->isi !!}
                     </article>
                 </div>
-
-
             </div>
-
         </div>
-
-
     </div>
 
 </x-app-layout>

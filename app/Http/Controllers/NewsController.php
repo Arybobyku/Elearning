@@ -14,7 +14,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
+        return view('general.news', [
+            'news' => News::latest()->get(),
+        ]);
     }
 
     /**
@@ -46,7 +48,9 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
+         return view('general.article', [
+            'news' => $news
+        ]);
     }
 
     /**
