@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Kuis;
+use App\Models\News;
 use App\Models\User;
 use App\Models\Materi;
 use App\Models\Welcome;
@@ -58,8 +59,8 @@ class DatabaseSeeder extends Seeder
             'isi' => 'Bedside teaching menurut dewi dkk (2019) merupakan metode pengajaran berbasis pasien dimana mahasiswa keperawatan yang menerima pelatihan bedside teaching mempraktekan kemampuan klinis dengan melihat dan mempelajari suatu kasus secara langsung, bedside teaching merupakan salah satu metode pembelajaran yang telah lama diterapkan pada pendidikan kesehatan di samping metode-metode pembelajaran klinik lainnya.<br>
             Sedangkan menurut Dorvil  (2016) Bedside teaching merupakan proses  pertukaran informasi penting pasien, tanggung jawab, dan akuntabilitas antara perawat yang pergi dan yang akan datang dalam upaya untuk memastikan kesinambungan perawatan yang aman dan pengiriman klinis terbaik. Dari  pengertian tersebut dapat disimpulkan bahwa bedside teaching merupakan metode pembelajaran yang dilakukan disamping tempat tidur yang melibatkan pasien secara aktif.',
         ]);
-        
-            Isimateris::create([
+
+        Isimateris::create([
             'id_materi' => 1,
             'sub_bab' => 'Manfaat Bedsite Teaching',
             'isi' => 'Metode bedside teaching bermanfaat memberikan kesempatan pada mahasiswa untuk mempelajari pasien kelolaannya sehingga dapat memberikan  asuhan keperawatan dengan baik. Pada pelaksanaanya metode ini dilakukan kepada pasien hanya beberapa menit saja kemudian mahasiswa lebih banyak diskusi di ruang rapat (Yulistika, 2022).
@@ -73,7 +74,7 @@ class DatabaseSeeder extends Seeder
             Selain itu metode bedside teaching juga bermanfaat membantu mahasiswa untuk mencapai kompetensi klinis dan mengembangkan keterampilan komunikasi, karena ada kesempatan bagi mahasiswa untuk berkomunikasi langsung dengan pasien (Manginte et al., 2019).
             ',
         ]);
-            Isimateris::create([
+        Isimateris::create([
             'id_materi' => 2,
             'sub_bab' => 'Defenisi Discharge Planing',
             'youtube' => 'L2-Jm58DPKQ',
@@ -88,7 +89,7 @@ class DatabaseSeeder extends Seeder
             Mustikaningsih juga berpendapat bawah discharge planning memiliki pengaruh yang besar dan penting dalam pelaksanaan pelayana kesehatan yaitu dapat mengurangi rawat inap pasien, memberikan intervensi yang tepat  untuk perawatan berkelanjutan dan kebutuhan pasien, sehingga terdapat kesinambungan perawatan antara pengaturan perawatan kesehatan dan masyarakat berdasarkan kebutuhan individu.
             ',
         ]);
-            Isimateris::create([
+        Isimateris::create([
             'id_materi' => 2,
             'sub_bab' => 'Tujuan Discharge Planning',
             'isi' => 'Menurut Lin et al., (2012) bahwa tujuan dari discharge planning ialah: <br>
@@ -97,7 +98,7 @@ class DatabaseSeeder extends Seeder
             3.	Memastikan bahwa rujukan yang diperlukan untuk perawatan selanjutnya pada pasien adalah benar.
             ',
         ]);
-                    Isimateris::create([
+        Isimateris::create([
             'id_materi' => 3,
             'sub_bab' => 'Pengertian BOR',
             'isi' => 'Menurut Lin et al., (2012) bahwa tujuan dari discharge planning ialah: <br>
@@ -106,7 +107,7 @@ class DatabaseSeeder extends Seeder
             3.	Memastikan bahwa rujukan yang diperlukan untuk perawatan selanjutnya pada pasien adalah benar.
             ',
         ]);
-            Kuis::create([
+        Kuis::create([
             'soal' => 'Tujuan dari pemberian senam nifas yaitu?',
             'jawaban' => '1',
             'opsi1' => 'Mempercepat proses pemulihan keadaan ibu',
@@ -114,7 +115,7 @@ class DatabaseSeeder extends Seeder
             'opsi3' => 'Memudahkan melakukan aktivitas',
             'opsi4' => 'Menambah nafsu makan',
         ]);
-            Kuis::create([
+        Kuis::create([
             'soal' => 'Apa yang dimaksud dengan senam nifas?',
             'jawaban' => '1',
             'opsi1' => 'Gerakan-gerakan yang dilakukan ibu setelah melahirkan ',
@@ -122,7 +123,7 @@ class DatabaseSeeder extends Seeder
             'opsi3' => 'Gerakan-gerakan waktu ibu melahirkan',
             'opsi4' => 'Senam nifas dilakukan pada bulan ke 20 saja',
         ]);
-            Kuis::create([
+        Kuis::create([
             'soal' => 'Kapan ibu mulai menyusi?',
             'jawaban' => '2',
             'opsi1' => 'Seminggu setelah melahirkan',
@@ -130,25 +131,39 @@ class DatabaseSeeder extends Seeder
             'opsi3' => '1 hari setelah melahirkan',
             'opsi4' => '1 hari sebelum melahirkan',
         ]);
-            Welcome::create([
+        Welcome::create([
             'name' => 'TIS',
             'image' => 'isimateri-images/KhcGVWs3vJyMhLXMN6gN570NnNZvlvOwveS09LFR.png',
         ]);
-            Welcome::create([
+        Welcome::create([
             'name' => 'BOR',
             'image' => 'isimateri-images/hSdgDtv9U86NscL6P30rDNcrb4MnvRetEdeOOOxv.png',
         ]);
-            Welcome::create([
+        Welcome::create([
             'name' => 'Bedsite',
             'image' => 'isimateri-images/fdRgXWW6L9vB6UF75sjX7RK9ZKah8zkrCzNcQOMa.png',
         ]);
-            Welcome::create([
+        Welcome::create([
             'name' => 'Discharge',
             'image' => 'isimateri-images/A5JTB7nyv2FHcomWrZi4CRppAH4wD2l9dgpnBrn4.png',
         ]);
-            Welcome::create([
+        Welcome::create([
             'name' => 'Evaluasi Kerja',
             'image' => 'isimateri-images/jAclDZ972g4RFhL8crvoUPTan0AmwVSZDhrTQrsj.png',
+        ]);
+        News::create([
+            'title' => 'Sebanyak 37.871 Peserta Ikuti UTBK-SBMPTN USU',
+            'slug' => 'acara-puncak-dies-natalis-ke-23-fakultas-keperawatan-usu',
+            'excerpt' => 'Dilansir Dari USU Rabu, 28 September 2022, Fakultas Keperawatan USU mengadakan Peringatan Dies Nata...',
+            'isi' =>
+                '<div> Dilansir Dari USU Rabu, 28 September 2022, Fakultas Keperawatan USU mengadakan Peringatan Dies Natalis ke-23 Fakultas Keperawatan USU yang merupakan acara puncak dari beberapa rangkaian kegiatan yang telah diadakan sebelumnya yaitu berupa Funwalk, Pemeriksaan Kesehatan gratis, aneka lomba dan bazaar.&nbsp;</div><div>Dies Natalis ke-23 Fakultas Keperawatan USU dihadiri oleh para undangan seperti Rektor USU, para Wakil Rektor USU, Direktur Utama RSP USU, Direktur Direktorat di lingkungan USU, Kepala Badan di lingkungan USU, para Dekan di lingkungan USU, Dinas Kesehatan Kota Medan, Dinas Kesehatan Provinsi Sumatera Utara, Institusi Pendidikan Kesehatan di kota Medan, dan undangan lainnya.&nbsp;<br>Diawali dengan Sambutan oleh Ketua Panitia Dies Natalis ke-23 Fakultas Keperawatan USU, Ikhsanuddin A. Harahap, S.Kp., MNS menyampaikan terima kasih kepada para tamu undangan yang telah hadir dalam acara puncak Dies Natalis ke-23 Fakultas Keperawatan USU dan juga kepada seluruh panitia yang terlibat pada acara ini.&nbsp;<br>&nbsp;Dilanjutkan dengan Pidato Dekan Fakultas Keperawatan USU, Dr. Dudut Tanjung, S.Kp., M.Kep., Sp.KMB menyampaikan bahwa Fakultas Keperawatan di usianya yang ke-23 mengalami perkembangan yang cukup pesat, baik dari aspek sarana, prasarana, kualitas tenaga dosen, tenaga kependidikan, serta kerjasama yang dibina baik dalam maupun luar negeri. Fakultas Keperawatan telah mendapatkan apresiasi besar oleh Rektor USU mewakili universitas bersama dengan 12 PTN se-Indonesia diajukan ke Kemendikbud Ristek RI dalam upaya Pembangunan Zona Integritas menuju Wilayah Bebas Korupsi (ZI-WBK).Rektor USU, Dr. Muryanto Amin, S.Sos., M.Si dalam sambutannya menyampaikan Selamat Ulang Tahun kepada Fakultas Keperawatan USU yang ke-23. Diibaratkan manusia, usia 23 merupakan periode awal masa dewasa seorang manusia, usia enerjik untuk melakukan hal-hal besar. Muryanto Amin juga mengingatkan bahwa dalam mengelola fakultas tidak bisa dilakukan tanpa rencana yang baik. Kegiatan apapun yang akan dilakukan tahun depan, wajib direncanakan secara matang di tahun ini agar dapat terealisasi dengan baik.Peringatan Dies Natalis ke-23 Fakultas Keperawatan USU ditutup dengan Orasi Ilmiah oleh Ketua Umum DPP PPNI, Dr. Harif Fadhillah, S.Kp., SH., M.Kep., MH. dengan judul “Penguatan Kompetensi Perawat melalui Pendidikan Keperawatan Berorientasi Global”. Institusi pendidikan keperawatan sebagai institusi yang mempersiapkan SDM Perawat yang berkualitas secara formal tidaklah mudah dan penuh tantangan dalam penyelenggaraan pendidikan keperawatan apalagi untuk menjawab tantangan global, karenanya selain mengacu pada standar kompetensi dan kecenderungan keperawatan dunia. Pendidikan keperawatan di Indonesia juga tak lepas dari isu tantangan global yaitu Disrupsi. Disrupsi merupakan penetrasi dari Revolusi Industri 4.0 (RI 4.0) dan bahkan ada beberapa negara mengembangkan diskusinya pada RI 5.0.&nbsp;</div>',
+        ]);
+        News::create([
+            'title' => 'Dies Natalis FKEP USU',
+            'slug' => 'dies-natalis-fkep-usu',
+            'excerpt' => 'Dilansir Dari USU Rabu, 28 September 2022, Fakultas Keperawatan USU mengadakan Peringatan Dies Nata...',
+            'isi' =>
+                '<div> Dilansir Dari USU Rabu, 28 September 2022, Fakultas Keperawatan USU mengadakan Peringatan Dies Natalis ke-23 Fakultas Keperawatan USU yang merupakan acara puncak dari beberapa rangkaian kegiatan yang telah diadakan sebelumnya yaitu berupa Funwalk, Pemeriksaan Kesehatan gratis, aneka lomba dan bazaar.&nbsp;</div><div>Dies Natalis ke-23 Fakultas Keperawatan USU dihadiri oleh para undangan seperti Rektor USU, para Wakil Rektor USU, Direktur Utama RSP USU, Direktur Direktorat di lingkungan USU, Kepala Badan di lingkungan USU, para Dekan di lingkungan USU, Dinas Kesehatan Kota Medan, Dinas Kesehatan Provinsi Sumatera Utara, Institusi Pendidikan Kesehatan di kota Medan, dan undangan lainnya.&nbsp;<br>Diawali dengan Sambutan oleh Ketua Panitia Dies Natalis ke-23 Fakultas Keperawatan USU, Ikhsanuddin A. Harahap, S.Kp., MNS menyampaikan terima kasih kepada para tamu undangan yang telah hadir dalam acara puncak Dies Natalis ke-23 Fakultas Keperawatan USU dan juga kepada seluruh panitia yang terlibat pada acara ini.&nbsp;<br>&nbsp;Dilanjutkan dengan Pidato Dekan Fakultas Keperawatan USU, Dr. Dudut Tanjung, S.Kp., M.Kep., Sp.KMB menyampaikan bahwa Fakultas Keperawatan di usianya yang ke-23 mengalami perkembangan yang cukup pesat, baik dari aspek sarana, prasarana, kualitas tenaga dosen, tenaga kependidikan, serta kerjasama yang dibina baik dalam maupun luar negeri. Fakultas Keperawatan telah mendapatkan apresiasi besar oleh Rektor USU mewakili universitas bersama dengan 12 PTN se-Indonesia diajukan ke Kemendikbud Ristek RI dalam upaya Pembangunan Zona Integritas menuju Wilayah Bebas Korupsi (ZI-WBK).Rektor USU, Dr. Muryanto Amin, S.Sos., M.Si dalam sambutannya menyampaikan Selamat Ulang Tahun kepada Fakultas Keperawatan USU yang ke-23. Diibaratkan manusia, usia 23 merupakan periode awal masa dewasa seorang manusia, usia enerjik untuk melakukan hal-hal besar. Muryanto Amin juga mengingatkan bahwa dalam mengelola fakultas tidak bisa dilakukan tanpa rencana yang baik. Kegiatan apapun yang akan dilakukan tahun depan, wajib direncanakan secara matang di tahun ini agar dapat terealisasi dengan baik.Peringatan Dies Natalis ke-23 Fakultas Keperawatan USU ditutup dengan Orasi Ilmiah oleh Ketua Umum DPP PPNI, Dr. Harif Fadhillah, S.Kp., SH., M.Kep., MH. dengan judul “Penguatan Kompetensi Perawat melalui Pendidikan Keperawatan Berorientasi Global”. Institusi pendidikan keperawatan sebagai institusi yang mempersiapkan SDM Perawat yang berkualitas secara formal tidaklah mudah dan penuh tantangan dalam penyelenggaraan pendidikan keperawatan apalagi untuk menjawab tantangan global, karenanya selain mengacu pada standar kompetensi dan kecenderungan keperawatan dunia. Pendidikan keperawatan di Indonesia juga tak lepas dari isu tantangan global yaitu Disrupsi. Disrupsi merupakan penetrasi dari Revolusi Industri 4.0 (RI 4.0) dan bahkan ada beberapa negara mengembangkan diskusinya pada RI 5.0.&nbsp;</div>',
         ]);
     }
 }

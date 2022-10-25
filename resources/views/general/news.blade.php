@@ -64,6 +64,6 @@
             {{ $newss->links() }}
         </div>
     @else
-        <p class="text-center text-2xl text-slate-700 font-sans"> Belum Ada Postingan</p>
+        <p class="text-center text-3xl text-slate-700 font-sans p-40"> Belum Ada Postingan</p>
     @endif
 @endsection

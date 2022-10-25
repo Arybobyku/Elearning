@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 class DashboardNewsController extends Controller
 {
     /**
@@ -20,7 +22,7 @@ class DashboardNewsController extends Controller
     public function index()
     {
         return view('admin.news.index', [
-            'newss' => News::all(),
+            'newss' => News::paginate(10),
         ]);
     }
 
@@ -107,7 +109,10 @@ class DashboardNewsController extends Controller
                 'isi' => 'required',
             ]);
         }
-            if ($request->file('image')) {
+        if ($request->file('image')) {
+            if ($news->oldImage) {
+                Storage::delete($news->oldImage);
+            }
             $validatedData['image'] = $request->file('image')->store('isimateri-images');
         }
 
@@ -125,6 +130,9 @@ class DashboardNewsController extends Controller
      */
     public function destroy(News $news)
     {
+        if ($news->image) {
+            Storage::delete($news->image);
+        }
         News::destroy($news->id);
 
         return redirect('/dashboard/news')->with('delete', 'Isi Materi Baru Telah Dihapus');

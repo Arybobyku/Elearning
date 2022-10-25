@@ -14,7 +14,7 @@ class CalculatorController extends Controller
         $tempattidur = request()->input('tempattidur');
         $hariwaktu = request()->input('hariwaktu');
         if ($hariwaktu != 0 && $tempattidur != 0) {
-            $hasilJawaban = ((int) $harirawat / (int) $tempattidur) * (int) $hariwaktu * 100;
+            $hasilJawaban = ((int) $harirawat / ((int) $tempattidur * (int) $hariwaktu))*100;
         } else {
             $hasilJawaban = 0;
         }
@@ -22,7 +22,7 @@ class CalculatorController extends Controller
             'harirawat' => $harirawat,
             'tempattidur' => $tempattidur,
             'hariwaktu' => $hariwaktu,
-            'hasilJawaban' => 0 ? 0 : $hasilJawaban,
+            'hasilJawaban' => $hasilJawaban,
         ]);
     }
     public function alos()
@@ -30,7 +30,7 @@ class CalculatorController extends Controller
         $harirawat = request()->input('harirawat');
         $keluar = request()->input('keluar');
         if ($keluar != 0) {
-            $hasilJawaban = ((int) $harirawat / (int) $keluar) * 100;
+            $hasilJawaban = ((int) $harirawat / (int) $keluar);
         } else {
             $hasilJawaban = 0;
         }
@@ -47,7 +47,7 @@ class CalculatorController extends Controller
         $tempattidur = request()->input('tempattidur');
         $keluar = request()->input('keluar');
         if ($keluar != 0) {
-            $hasilJawaban = ((((int) $hari * (int) $tempattidur) - (int)$harirawat)/(int) $keluar) * 100;
+            $hasilJawaban = ((((int) $hari * (int) $tempattidur) - (int)$harirawat)/(int) $keluar);
         } else {
             $hasilJawaban = 0;
         }

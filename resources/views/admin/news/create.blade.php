@@ -40,10 +40,12 @@
                     </div>
 
                     <div class="mb-6">
+                        <img class="img-preview w-56">
                         <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
-                        <input value="{{ old('image') }}"
+                        <input
                             class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:placeholder-gray-400 @error('image') is-invalid @enderror"
-                            aria-describedby="file_input_help" id="image" name="image" type="file">
+                            aria-describedby="file_input_help" id="image" name="image" type="file"
+                            onchange="previewImage()">
                         <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG
                             (MAX. 800x400px).</p>
                         @error('image')
@@ -55,7 +57,7 @@
                     <div class="mb-6">
                         <label for="isi" class="block mb-2 text-sm font-medium text-gray-900">Isi</label>
                         <input id="isi" type="hidden" name="isi" value="{{ old('isi') }}">
-                        <trix-editor input="isi" ></trix-editor>
+                        <trix-editor input="isi"></trix-editor>
                     </div>
 
                     <button type="submit"
@@ -74,6 +76,19 @@
                 preslug = preslug.replace(/ /g, "-");
                 slug.value = preslug.toLowerCase();
             });
+        </script>
+        <script>
+            function previewImage() {
+                const image = document.querySelector('#image');
+                const imgPreview = document.querySelector('.img-preview');
+
+                imgPreview.style.display = 'block';
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(image.files[0]);
+                oFReader.onload = function(oFREvent) {
+                    imgPreview.src = oFREvent.target.result
+                }
+            }
         </script>
     </div>
 
