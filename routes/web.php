@@ -11,8 +11,10 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\DiskusiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\DashboardKuisController;
+use App\Http\Controllers\DashboardNewsController;
 use App\Http\Controllers\DashboardMateriController;
 use App\Http\Controllers\DashboardDiskusiController;
 use App\Http\Controllers\DashboardWelcomeController;
@@ -40,6 +42,9 @@ Route::get('/',[WelcomeController::class, 'index']);
 Route::get('/about', function () {
     return view('general/about');
 });
+Route::get('/news',[NewsController::class, 'index']);
+Route::get('/article/{news:slug}',[NewsController::class, 'show']);
+
 Route::get('/bor',[CalculatorController::class, 'bor']);
 Route::post('/bor',[CalculatorController::class, 'bor']);
 
@@ -59,12 +64,13 @@ require __DIR__.'/auth.php';
 
 Route::resource('/dashboard/materi', DashboardMateriController::class)->middleware('auth','admin');
 Route::resource('/dashboard/isimateri', DashboardIsiMateriController::class)->middleware('auth','admin');
+Route::resource('/dashboard/news', DashboardNewsController::class)->middleware('auth','admin');
 Route::resource('/dashboard/diskusi', DashboardDiskusiController::class)->middleware('auth','admin');
 Route::resource('/dashboard/kuis', DashboardKuisController::class)->middleware('auth','admin');
 Route::resource('/dashboard/welcome', DashboardWelcomeController::class)->middleware('auth','admin');
 Route::resource('/dashboard/userresult', DashboardUserResultsController::class)->middleware('auth','admin');
-
 Route::delete('/dashboard/userresult/', 'App\Http\Controllers\DashboardUserResultsController@destroy');
+// Route::get('/dashboard/news/checkSlug,', [DashboardNewsController::class, 'checkSlug'])->middleware('auth','admin');
 
 Route::middleware('auth')->group(function () {
 

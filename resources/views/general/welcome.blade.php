@@ -48,7 +48,7 @@
                         @foreach ($welcomes as $welcome)
                             <div class="flex flex-shrink-0 relative w-full sm:w-auto">
                                 <img src="{{ asset('storage/' . $welcome->image) }}" alt="sitting area"
-                                    class="object-cover object-center w-full" />
+                                    class="object-cover object-center h-96 overflow-hidden w-60" />
                                 <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
                                     {{-- <h2 class="lg:text-xl leading-4 text-base lg:leading-5 text-white ">BOR</h2> --}}
                                     <div class="flex h-full items-end pb-6">

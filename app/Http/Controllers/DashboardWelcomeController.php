@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Welcome;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class DashboardWelcomeController extends Controller
@@ -15,7 +16,7 @@ class DashboardWelcomeController extends Controller
     public function index()
     {
         return view('admin.welcome.index', [
-            'welcomes' => Welcome::all()
+            'welcomes' => Welcome::all(),
         ]);
     }
 
@@ -26,7 +27,7 @@ class DashboardWelcomeController extends Controller
      */
     public function create()
     {
-         return view('admin.welcome.create');
+        return view('admin.welcome.create');
     }
 
     /**
@@ -37,20 +38,18 @@ class DashboardWelcomeController extends Controller
      */
     public function store(Request $request)
     {
-         $validatedData = $request->validate([
-        'name' => 'required|max:255',
-        'image' => 'image|file|max:1024',
-    ]);
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'image' => 'image|file|max:1024',
+        ]);
 
-    if ($request->file('image')){
-        $validatedData['image'] = $request->file('image')->store('isimateri-images');
-    }
-    
-    Welcome::create($validatedData);
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('isimateri-images');
+        }
 
-    return redirect('/dashboard/welcome')->with('success', 'Gambar Baru Telah Ditambahkan');
-    
-    
+        Welcome::create($validatedData);
+
+        return redirect('/dashboard/welcome')->with('success', 'Gambar Baru Telah Ditambahkan');
     }
 
     /**
@@ -62,7 +61,7 @@ class DashboardWelcomeController extends Controller
     public function show(Welcome $welcome)
     {
         return view('admin.welcome.show', [
-            'welcome' => $welcome
+            'welcome' => $welcome,
         ]);
     }
 
@@ -75,7 +74,7 @@ class DashboardWelcomeController extends Controller
     public function edit(Welcome $welcome)
     {
         return view('admin.welcome.edit', [
-            'welcome' => $welcome
+            'welcome' => $welcome,
         ]);
     }
 
@@ -84,11 +83,25 @@ class DashboardWelcomeController extends Controller
      *
      * @param  \App\Http\Requests\UpdateWelcomeRequest  $request
      * @param  \App\Models\Welcome  $welcome
-     * @return \Illuminate\Http\Response    
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Welcome $welcome)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'image' => 'image|file|max:1024',
+        ]);
+
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('isimateri-images');
+        }
+
+        Welcome::where('id', $welcome->id)->update($validatedData);
+
+        return redirect('/dashboard/welcome')->with('success', 'Gambar Baru Telah Ditambahkan');
     }
 
     /**
@@ -99,6 +112,11 @@ class DashboardWelcomeController extends Controller
      */
     public function destroy(Welcome $welcome)
     {
-        //
+        if ($welcome->image) {
+            Storage::delete($welcome->image);
+        }
+        Welcome::destroy($welcome->id);
+
+        return redirect('/dashboard/welcome')->with('delete', 'Gambar Telah Dihapus');
     }
 }

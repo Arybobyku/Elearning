@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Isimateris;
 use App\Models\Materi;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -16,8 +17,8 @@ class DashboardIsiMateriController extends Controller
      */
     public function index()
     {
-            return view('admin.isimateri.index', [
-            'isimateris' => Isimateris::paginate(10)
+        return view('admin.isimateri.index', [
+            'isimateris' => Isimateris::paginate(10),
         ]);
     }
 
@@ -28,10 +29,9 @@ class DashboardIsiMateriController extends Controller
      */
     public function create()
     {
-        return view('admin/isimateri.create',[
-            'judulmateris' => Materi::all()
+        return view('admin/isimateri.create', [
+            'judulmateris' => Materi::all(),
         ]);
-
     }
 
     /**
@@ -42,22 +42,21 @@ class DashboardIsiMateriController extends Controller
      */
     public function store(Request $request)
     {
-         $validatedData = $request->validate([
-        'id_materi' => 'required|max:11',
-        'sub_bab' => 'required|max:255',
-        'image' => 'image|file|max:1024',
-        'youtube' => 'max:255',
-        'isi' => 'required'
-    ]);
+        $validatedData = $request->validate([
+            'id_materi' => 'required|max:11',
+            'sub_bab' => 'required|max:255',
+            'image' => 'image|file|max:1024',
+            'youtube' => 'max:255',
+            'isi' => 'required',
+        ]);
 
-    if ($request->file('image')){
-        $validatedData['image'] = $request->file('image')->store('isimateri-images');
-    }
-    
-    Isimateris::create($validatedData);
+        if ($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('isimateri-images');
+        }
 
-    return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Ditambahkan');
-    
+        Isimateris::create($validatedData);
+
+        return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Ditambahkan');
     }
 
     /**
@@ -69,7 +68,7 @@ class DashboardIsiMateriController extends Controller
     public function show(Isimateris $isimateri)
     {
         return view('admin.isimateri.show', [
-            'isimateri' => $isimateri
+            'isimateri' => $isimateri,
         ]);
     }
 
@@ -83,11 +82,9 @@ class DashboardIsiMateriController extends Controller
     {
         return view('admin.isimateri.edit', [
             'isimateris' => $isimateri,
-            'judulmateri' => Materi::all()
-
+            'judulmateri' => Materi::all(),
         ]);
     }
-    
 
     /**
      * Update the specified resource in storage.
@@ -98,19 +95,22 @@ class DashboardIsiMateriController extends Controller
      */
     public function update(Request $request, Isimateris $isimateri)
     {
-         $validatedData = $request->validate([
-        'sub_bab' => 'required|max:255',
-        'id_materi' => 'required|max:11',
-        'image' => 'image|file|max:1024',
-        'youtube' => 'max:255',
-        'isi' => 'required'
-    ]);
-    if ($request->file('image')){
-    $validatedData['image'] = $request->file('image')->store('isimateri-images');
-    }
-    Isimateris::where('id', $isimateri->id)->update($validatedData);
+        $validatedData = $request->validate([
+            'sub_bab' => 'required|max:255',
+            'id_materi' => 'required|max:11',
+            'image' => 'image|file|max:1024',
+            'youtube' => 'max:255',
+            'isi' => 'required',
+        ]);
+        if ($request->file('image')) {
+            if ($request->oldImage) {
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image'] = $request->file('image')->store('isimateri-images');
+        }
+        Isimateris::where('id', $isimateri->id)->update($validatedData);
 
-    return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Diubah');
+        return redirect('/dashboard/isimateri')->with('success', 'Isi Materi Baru Telah Diubah');
     }
 
     /**
@@ -121,8 +121,11 @@ class DashboardIsiMateriController extends Controller
      */
     public function destroy(Isimateris $isimateri)
     {
+        if ($isimateri->image) {
+            Storage::delete($isimateri->image);
+        }
         Isimateris::destroy($isimateri->id);
 
-    return redirect('/dashboard/isimateri')->with('delete', 'Isi Materi Baru Telah Dihapus');
+        return redirect('/dashboard/isimateri')->with('delete', 'Isi Materi Baru Telah Dihapus');
     }
 }

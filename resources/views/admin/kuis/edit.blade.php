@@ -27,8 +27,13 @@
                     <input type="text" name="soal" id="soal" value="{{ old('soal',$kuis->soal )}}" class="bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" required>
                 </div>
                 <div class="mb-6">
-                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Jawaban</label>
-                <input type="text" name="jawaban" id="jawaban" value="{{ old('jawaban', $kuis->jawaban )}}" class="block w-full p-2.5 bg-gray-50 border border-gray-300 text-black text-sm rounded-lg " placeholder="" required>
+                    <label for="jawaban" class="block mb-2 text-sm font-medium text-gray-900">Jawaban</label>
+                   <select class="form-select" name="jawaban" id="jawaban">
+                    <option value="1"@if ($kuis->jawaban=="1") selected @endif>1</option>
+                    <option value="2" @if ($kuis->jawaban=="2") selected @endif>2</option>
+                    <option value="3" @if ($kuis->jawaban=="3") selected @endif>3</option>
+                    <option value="4" @if ($kuis->jawaban=="4") selected @endif>4</option>
+                   </select>
                 </div>
                 <div class="mb-6">
                     <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Opsi 1</label>

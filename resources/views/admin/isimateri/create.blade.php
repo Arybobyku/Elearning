@@ -33,26 +33,27 @@
                 </div>
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Sub Bab Materi</label>
-                    <input type="text" id="sub_bab" name="sub_bab" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" required>
+                    <input type="text" id="sub_bab" name="sub_bab" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" value="{{ old('sub_bab') }}" required>
                 </div>
 
                 <div class="mb-6">
                 <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
-                <input class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:placeholder-gray-400 @error('image') is-invalid @enderror" aria-describedby="file_input_help" id="image" name="image" type="file">
+                <img class="img-preview w-56">
+                <input  class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:placeholder-gray-400 @error('image') border-red-600 @enderror" aria-describedby="file_input_help" id="image" name="image" type="file" onchange="previewImage()" value="{{ old('image') }}">
                 <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG (MAX. 800x400px).</p>
                 @error('image')
-                <div class="invalid-feedback">
+                <div class="text-red-600">
                     {{ $message }}
                 </div>
                 @enderror
                 </div>
                 <div class="mb-6">
                     <label for="youtube" class="block mb-2 text-sm font-medium text-gray-900 ">Link Youtube</label>
-                    <input type="link" id="youtube" name="youtube" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="">
+                    <input type="link" id="youtube" name="youtube" class="form-control bg-gray-50 border border-gray-300 text-black text-sm rounded-lg block w-full p-2.5" placeholder="" value="{{ old('youtube') }}">
                 </div>
                 <div class="mb-6">
                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Isi</label>
-                     <input id="isi" type="hidden" name="isi">
+                     <input id="isi" type="hidden" value="{{ old('isi') }}" name="isi">
                     <trix-editor input="isi"></trix-editor>
                 </div>
 
@@ -64,5 +65,17 @@
 
 
     </div>
-  
+  <script>
+function previewImage() {
+const image = document.querySelector('#image');
+const imgPreview = document.querySelector('.img-preview');
+
+imgPreview.style.display = 'block';
+const oFReader = new FileReader();
+oFReader.readAsDataURL(image.files[0]);
+oFReader.onload = function (oFREvent){
+    imgPreview.src = oFREvent.target.result
+}
+} 
+</script>
 </x-app-layout>

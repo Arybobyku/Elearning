@@ -89,7 +89,6 @@
         </div>
       <div class="p-4">
             {{ $isi_materis->links() }}
-            {{ $isi_materis->nextPageUrl()}}
       </div>
 
 @endsection
