@@ -127,9 +127,9 @@
                 </h2>
                 <p class="light text-gray-600 mb-10">
                     Webiste ini dibangun untuk membantu mahasiswa hingga perawat yang sudah bekerja agar dapat mendapatkan
-                    materi seputar nursing management secara gratis
+                    materi seputar nursing management secara gratis 
                 </p>
-                <a href="#"
+                <a href="https://wa.me/6285276536798"
                     class="text-base font-semibold text-white bg-slate-800 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">Hubungi
                     Kami</a>
             </div>
