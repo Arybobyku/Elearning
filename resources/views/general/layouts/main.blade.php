@@ -36,10 +36,7 @@
                             <nav id="nav-profile"
                                 class="hidden absolute py-5 lg:mr-80 md:mr-36 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full ">
                                 <ul class="block">
-                                    <li class="group">
-                                        <a href="#"
-                                            class="text-base text-black py-2 mx-8 group-hover:text-cyan-900">Profile</a>
-                                    </li>
+                    
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <li class="group">
