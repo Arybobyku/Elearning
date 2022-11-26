@@ -50,7 +50,7 @@
 
 
                         @foreach ($welcomes as $welcome)
-                            <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                            <a class="flex flex-shrink-0 relative w-full sm:w-auto" href="/academies/materi">
                                 <img src="{{ asset('storage/' . $welcome->image) }}" alt="sitting area"
                                     class="object-cover object-center h-96 overflow-hidden w-60" />
                                 <div class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6">
@@ -61,7 +61,7 @@
                                         </h3>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         @endforeach
 
                     </div>
