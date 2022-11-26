@@ -13,7 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('chatbots', function (Blueprint $table) {
+            $table->id();
+            $table->string('question');
+            $table->string('answere');
+            $table->timestamps();
+        });
     }
 
     /**

@@ -14,10 +14,14 @@
             <p class="light text-gray-600 mb-10">
                 Mulai belajar manajemen kepearawatan dengan terarah sekarang
             </p>
-            <a href="{{ route('register') }}"
-                class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">Mulai
-                Belajar Sekarang</a>
+            @if (Auth::user())
 
+            @else
+                <a href="{{ route('register') }}"
+                class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                Mulai Belajar Sekarang</a>
+            @endif
+ 
         </div>
         <div class="w-full self-end px-4 lg:max-w-lg">
             <div class="mt-10 lg:mt-9 lg:right-0">
