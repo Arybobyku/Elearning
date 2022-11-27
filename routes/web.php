@@ -76,7 +76,7 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/academies', function () {
   return view('users/academies');
-});
+})->name('academies');
 Route::get('/academies/materi',[MateriController::class, 'index']);
 Route::get('/academies/materi/{id_materi}',[MateriController::class, 'isi']);
 Route::get('/academies/kuis',[KuisController::class, 'create']);

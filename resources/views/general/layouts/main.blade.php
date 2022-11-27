@@ -203,6 +203,7 @@
         bubbleBackground: '#164E63',
         headerTextColor: '#fff',
         introMessage: "✋ Hi! selamat datang di website Ariga Nursing Management"
+        
     };
 </script>
 
