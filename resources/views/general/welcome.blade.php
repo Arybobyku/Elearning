@@ -16,20 +16,23 @@
             </p>
             @if (Auth::user())
                 <a href="{{ route('academies') }}"
-                class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-                Mulai Belajar Sekarang</a>
+                    class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                    Mulai Belajar Sekarang</a>
             @else
                 <a href="{{ route('register') }}"
-                class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-                Mulai Belajar Sekarang</a>
+                    class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
+                    Mulai Belajar Sekarang</a>
             @endif
- 
+
         </div>
-        <div class="w-full self-end px-4 lg:max-w-lg">
-            <div class="mt-10 lg:mt-9 lg:right-0">
-                <img src='{{ asset('/images/arigawelcome.png') }}' alt="Me" class="max-w-full mx-auto" />
+        @foreach ($landingimages as $landingimage)
+            <div class="w-full self-end px-4 lg:max-w-lg">
+                <div class="mt-10 lg:mt-9 lg:right-0">
+                    <img src="{{ asset('storage/' . $landingimage->image) }}" alt="Ariga Nursing Management"
+                        class="object-cover object-center  h-96 overflow-hidden w-96 mx-auto" />
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
     <!-- Display Container (not part of component) START -->
 
@@ -133,7 +136,7 @@
                 </h2>
                 <p class="light text-gray-600 mb-10">
                     Webiste ini dibangun untuk membantu mahasiswa hingga perawat yang sudah bekerja agar dapat mendapatkan
-                    materi seputar nursing management secara gratis 
+                    materi seputar nursing management secara gratis
                 </p>
                 <a href="https://wa.me/6285276536798"
                     class="text-base font-semibold text-white bg-slate-800 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">Hubungi

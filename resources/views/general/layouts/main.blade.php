@@ -146,7 +146,7 @@
     function goNext() {
         defaultTransform = defaultTransform - 398;
         var slider = document.getElementById("slider");
-        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7)
+        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.3)
             defaultTransform = 0;
         slider.style.transform = "translateX(" + defaultTransform + "px)";
     }

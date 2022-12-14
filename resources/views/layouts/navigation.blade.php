@@ -77,7 +77,28 @@
                         Pengguna
                     </x-nav-link>
                 </li>
-
+                            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/landingimage" :active="request()->routeIs('landingimage.index') ||
+                    request()->routeIs('landingimage.show') ||
+                    request()->routeIs('landingimage.create') ||
+                    request()->routeIs('landingimage.edit')">
+                    <x-slot name="icon">
+                        <i class="fa fa-tv mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Landing Image
+                </x-nav-link>
+            </ul>
+            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+                <x-nav-link href="/dashboard/welcome" :active="request()->routeIs('welcome.index') ||
+                    request()->routeIs('welcome.show') ||
+                    request()->routeIs('welcome.create') ||
+                    request()->routeIs('welcome.edit')">
+                    <x-slot name="icon">
+                        <i class="fa fa-tv mr-2 text-sm opacity-75"></i>
+                    </x-slot>
+                    Welcome
+                </x-nav-link>
+            </ul>
                 {{-- <li class="items-center">
                     <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                         <x-slot name="icon">
@@ -127,17 +148,7 @@
                     Soal Kuis
                 </x-nav-link>
             </ul>
-            <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-                <x-nav-link href="/dashboard/welcome" :active="request()->routeIs('welcome.index') ||
-                    request()->routeIs('welcome.show') ||
-                    request()->routeIs('welcome.create') ||
-                    request()->routeIs('welcome.edit')">
-                    <x-slot name="icon">
-                        <i class="fa fa-tv mr-2 text-sm opacity-75"></i>
-                    </x-slot>
-                    Welcome
-                </x-nav-link>
-            </ul>
+
             <ul class="md:flex-col md:min-w-full flex flex-col list-none">
                 <x-nav-link href="/dashboard/userresult" :active="request()->routeIs('userresult.index') || request()->routeIs('userresult.show')">
                     <x-slot name="icon">
