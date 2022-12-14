@@ -31,11 +31,11 @@
                 @endif
             </div>
 
-            <a href="/dashboard/landingimage/create" class="flex flex-wrap gap-3 bg-cyan-900 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded m-8 w-54">
+            {{-- <a href="/dashboard/landingimage/create" class="flex flex-wrap gap-3 bg-cyan-900 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded m-8 w-54">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Tambah Gambar di Halaman Welcome</a>
+                Tambah Gambar di Halaman Welcome</a> --}}
             <div class="block w-full overflow-x-auto px-8">
 
                 <table class="items-center w-full bg-transparent border-collaps ">
