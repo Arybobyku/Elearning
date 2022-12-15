@@ -47,14 +47,13 @@
 
 
     @foreach ($isi_materis as $isimateri)
-        <div class="w-full self-center ">
-
-
+        <div class="w-full self-center grid grid-cols-3 gap-4 ">
             <h1 class="text-base text-left font-bold md:text-xl lg:text-2xl">
             </h1>
             <h3 class="text-base text-center font-semibold md:text-xl lg:text-2xl mt-4">
                 {{ $isimateri->sub_bab }}
             </h3>
+
         </div>
 
 
@@ -66,20 +65,31 @@
 
             </div>
         @endif
-
         <div class="mt-4 mx-16 py-16">
-            <article class="font-light justify-between text-lg">
-                <div class="trix-editor">
-                    {!! $isimateri->isi !!}
+
+            <div class="sm:flex flex-warp md:grid grid-cols-6 gap-6">
+
+                <div class="p-2 mx-auto outline outline-2 rounded-md outline-slate-500 shadow-md">
+                    <p class="text-center mb-2 text-xl">List Judul Sub Bab</p>
+                    @foreach ($list_materis as $key=> $listmateri)
+                        <a href="/academies/materi/{{ $listmateri->id_materi }}?page={{$key+1}}" class="text-xs"> {{ $listmateri->sub_bab }}</a>
+                    @endforeach
+                    
                 </div>
-            </article>
-        </div>
-        @if ($isimateri->youtube)
-            <div class="grid m-6 place-items-center">
-                <iframe width="640" height="480" src={{ 'https://www.youtube.com/embed/' . $isimateri->youtube }}>
-                </iframe>
+                <div class="col-span-5">
+                    <article class="font-light justify-between text-lg">
+                        <div class="trix-editor">
+                            {!! $isimateri->isi !!}
+                        </div>
+                    </article>
+                </div>
             </div>
-        @endif
+            @if ($isimateri->youtube)
+                <div class="grid m-6 place-items-center">
+                    <iframe width="640" height="480" src={{ 'https://www.youtube.com/embed/' . $isimateri->youtube }}>
+                    </iframe>
+                </div>
+            @endif
     @endforeach
     </div>
     <div class="p-4">

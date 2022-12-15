@@ -29,6 +29,7 @@ class MateriController extends Controller
         // $back = Isimateris::where('id', $user->id)->first();
         return view('users/isimateri', [
         "isi_materis" => Isimateris::where('id_materi', $id_materi)->paginate(1),
+        "list_materis" => Isimateris::where('id_materi', $id_materi)->get()
     ]
     )->with('next' , $next)->with('prev' , $prev);
 
