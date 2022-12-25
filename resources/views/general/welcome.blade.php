@@ -11,13 +11,13 @@
             {{-- <h2 class="medium text-stone-800 mb-5">
               Developer & <span class="text-stone-800"> Video Editor</span>
             </h2> --}}
-            <p class="light text-gray-600 mb-10">
-                Mulai belajar manajemen keperawatan dengan terarah sekarang
-            </p>
+            {{-- <p class="light text-gray-600 mb-10">
+                Mulai belajar manajemen kepearawatan dengan terarah sekarang
+            </p> --}}
             @if (Auth::user())
-                {{-- <a href="{{ route('academies') }}"
+                <a href="{{ route('academies') }}"
                     class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-                    Mulai Belajar Sekarang</a> --}}
+                    Mulai Belajar Sekarang</a>
             @else
                 <a href="{{ route('register') }}"
                     class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-full hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
