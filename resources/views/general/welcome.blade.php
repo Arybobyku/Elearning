@@ -12,7 +12,7 @@
               Developer & <span class="text-stone-800"> Video Editor</span>
             </h2> --}}
             <p class="light text-gray-600 mb-10">
-                Mulai belajar manajemen kepearawatan dengan terarah sekarang
+                Mulai belajar manajemen keperawatan dengan terarah sekarang
             </p>
             @if (Auth::user())
                 <a href="{{ route('academies') }}"
