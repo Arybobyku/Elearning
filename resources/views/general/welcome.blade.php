@@ -98,25 +98,25 @@
 
         <section class="my-5">
             <div class="text-center py-8">
-                <h2 class="font-semibold text-3xl text-teal-800 mb-2">Kalkulator</h2>
+                <h2 class="font-semibold text-3xl text-teal-800 mb-2">Indikator Pelayanan Rumah Sakit</h2>
                 <p class="light text-gray-600 mb-10">
-                    Gunakan kalkulator untuk mempermudah kamu menghitung BOR, ALOS, dan TOI
+                    Gunakan perhitungan untuk mempermudah kamu menghitung BOR, ALOS, dan TOI
                 </p>
                 <div class="mt-3 gap-2 md:flex">
                     <div>
                         <a href="/bor"
                             class="text font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-                            Kalkulator BOR</a>
+                             Perhitungan BOR</a>
                     </div>
                     <div>
                         <a href="/alos"
                             class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-                            Kalkulator ALOS</a>
+                            Perhitungan ALOS</a>
                     </div>
                     <div>
                         <a href="/toi"
                             class="text-base font-semibold text-white bg-cyan-900 py-3 px-9 rounded-md hover:shadow-md hover:opacity-80 transition duration-500 ease-in-out">
-                            Kalkulator TOI</a>
+                            Perhitungan TOI</a>
                     </div>
                 </div>
             </div>

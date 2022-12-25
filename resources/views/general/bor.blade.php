@@ -4,7 +4,7 @@
 @section('contents')
     <a href='/' class="text-md font-light text-white bg-slate-800 p-5 ml-4 mb-2 rounded-md hover:bg-slate-600">Kembali
     </a>
-    <h1 class="text-2xl text-center font-bold">Kalkulator Bed Cccupancy Rate (BOR)</h1>
+    <h1 class="text-2xl text-center font-bold">Perhitungan Bed Cccupancy Rate (BOR)</h1>
     <form method="post" action="/bor">
         @csrf
         <div class="flex flex-row m-16 gap-8 justify-center items-center">
