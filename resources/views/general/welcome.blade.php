@@ -8,6 +8,7 @@
                 <span class="block text-3xl mt-5 mb-2 text-cyan-900 md:text-3xl lg:text-5xl">
                     Ariga Nursing Management</span>
             </h1>
+            <br>
             {{-- <h2 class="medium text-stone-800 mb-5">
               Developer & <span class="text-stone-800"> Video Editor</span>
             </h2> --}}
